@@ -135,7 +135,7 @@ export default function Header() {
             </button>
           </div>
           <button className="font-semibold w-full px-4 text-white active:scale-[0.98] transition-all ease-linear duration-100 hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 py-2.5 rounded-2xl">
-            Buy now
+            Join now
           </button>
         </div>
       </nav>
@@ -304,7 +304,7 @@ export default function Header() {
               </svg>
             </button>
             <button className="font-semibold px-4 text-white active:scale-[0.98] transition-all ease-linear duration-100 hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 py-2.5 rounded-2xl">
-              Buy now
+              Join now
             </button>
           </div>
         </header>
