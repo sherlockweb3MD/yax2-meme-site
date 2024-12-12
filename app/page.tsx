@@ -15,7 +15,7 @@ export default function Home() {
             <img
               draggable="false"
               className="rounded-3xl active:opacity-[98%] active:scale-[0.95] transition-all ease-linear duration-100 cursor-pointer size-[170px]"
-              src="http://localhost:3001/pekky.svg"
+              src="https://pekk-yweb-site.vercel.app/pekky.svg"
             />
           </div>
           <div className="flex flex-col mt-9 lg:mt-0 text-start items-start justify-center">
@@ -36,7 +36,7 @@ export default function Home() {
             <img
               draggable="false"
               className="rounded-3xl active:opacity-[98%] size-[280px] active:scale-[0.95] transition-all ease-linear duration-100 cursor-pointer"
-              src="http://localhost:3001/pekky.svg"
+              src="https://pekk-yweb-site.vercel.app/pekky.svg"
             />
           </div>
         </section>
