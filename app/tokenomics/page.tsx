@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 export default function Tokenomics() {
   return (
     <motion.div
-      initial={{ opacity: 0, x: -0 }}
-      animate={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
     >
       <div className="flex flex-col mt-[108px] lg:mt-0 max-w-[100vw] overflow-x-hidden justify-center items-center h-[calc(100vh-108px)]">
