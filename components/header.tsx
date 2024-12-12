@@ -10,6 +10,7 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false); // State for sidebar (toggle)
+  const sliderText = "$PEKKY To The Moon!";
   return (
     <>
       {/* Hamburger menu for mobile devices */}
@@ -139,15 +140,15 @@ export default function Header() {
         </div>
       </nav>
       {/* Red slider for sm devices */}
-      <nav className="h-[40px] w-full lg:hidden flex text-white border-b-2 border-zinc-800 font-medium items-center justify-center bg-red-500">
-        <TextScroller text="$PEKKY to the moon" />
+      <nav className="h-[40px] z-[9999] flex w-full top-0 fixed lg:hidden text-white border-b-2 border-zinc-800 font-medium items-center justify-center bg-red-500">
+        <TextScroller text={sliderText} />
       </nav>
       <motion.div
         initial={{ opacity: 0, x: -0 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3 }}
       >
-        <header className="fixed grid lg:mt-0 mt-[40px] px-5 grid-cols-2 md:grid-cols-3 grid-rows-1 top-0 left-0 right-0 w-full h-[68px] bg-[#fefce1] border-b-2 border-zinc-800">
+        <header className="fixed z-[9999] grid lg:mt-0 mt-[40px] px-5 grid-cols-2 md:grid-cols-3 grid-rows-1 top-0 left-0 right-0 w-full h-[68px] bg-[#fefce1] border-b-2 border-zinc-800">
           <div className="w-full flex items-center flex-row justify-start">
             <h1
               onClick={() => router.replace("/")}
@@ -309,7 +310,7 @@ export default function Header() {
         </header>
         {/* Red slider for lg devices */}
         <nav className="h-[40px] mt-[68px] w-full hidden lg:flex text-white border-b-2 border-zinc-800 font-medium items-center justify-center bg-red-500">
-          <TextScroller text="$PEKKY to the moon" />
+          <TextScroller text={sliderText} />
         </nav>
       </motion.div>
     </>

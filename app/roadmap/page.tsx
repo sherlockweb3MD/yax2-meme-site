@@ -9,60 +9,64 @@ export default function Roadmap() {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="flex flex-col max-w-[100vw] overflow-x-hidden justify-center items-center h-[calc(100vh-108px)]">
-        <section className="w-full flex flex-row items-center justify-center px-16">
+      <div className="flex flex-col mt-[108px] lg:mt-0 max-w-[100vw] overflow-x-hidden justify-center items-center h-[calc(100vh-108px)]">
+        <section className="w-full flex mt-[240px] md:mt-0 flex-row items-center justify-center px-16">
           <div className="flex flex-col text-center items-center justify-start">
-            <h1 className="font-bold text-[40px]">Roadmap</h1>
-            <h2 className="font-medium leading-7 text-xl">Pekky roadmap</h2>
+            <h1 className="font-bold text-[32px] lg:text-[36px] xl:text-[40px]">
+              Roadmap
+            </h1>
+            <h2 className="font-medium leading-7 text-lg xl:text-xl">
+              Pekky roadmap
+            </h2>
           </div>
         </section>
-        <section className="grid grid-cols-3 w-full max-w-screen-md mt-10 gap-2 grid-rows-2">
+        <section className="grid px-4 pb-4 md:grid-cols-2 grid-cols-1 lg:grid-cols-3 w-full max-w-screen-md mt-8 lg:mt-10 gap-2 grid-rows-2">
           {/* Card */}
           <div className="bg-[#f6f3c9] p-[19px] w-full rounded-2xl">
-            <h3 className="tracking-[-0.020em] flex flex-row items-center text-lg font-medium">
-              Chapter One&nbsp;
+            <div className="tracking-[-0.020em] flex flex-row items-center text-lg font-medium">
+              Chapter 1&nbsp;
               <h2 className="text-xl font-semibold tracking-normal">#1</h2>
-            </h3>
+            </div>
             <p>Card description</p>
           </div>
           {/* Card */}
           <div className="bg-[#f6f3c9] p-[19px] rounded-2xl">
-            <h3 className="tracking-[-0.020em] flex flex-row items-center text-lg font-medium">
-              Chapter Two&nbsp;
+            <div className="tracking-[-0.020em] flex flex-row items-center text-lg font-medium">
+              Chapter 2&nbsp;
               <h2 className="text-xl font-semibold tracking-normal">#2</h2>
-            </h3>
+            </div>
             <p>Card description</p>
           </div>
           {/* Card */}
           <div className="bg-[#f6f3c9] p-[19px] rounded-2xl">
-            <h3 className="tracking-[-0.020em] flex flex-row items-center text-lg font-medium">
-              Chapter Three&nbsp;
+            <div className="tracking-[-0.020em] flex flex-row items-center text-lg font-medium">
+              Chapter 3&nbsp;
               <h2 className="text-xl font-semibold tracking-normal">#3</h2>
-            </h3>
+            </div>
             <p>Card description</p>
           </div>
           {/* Card */}
           <div className="bg-[#f6f3c9] p-[19px] rounded-2xl">
-            <h3 className="tracking-[-0.020em] flex flex-row items-center text-lg font-medium">
-              Chapter Four&nbsp;
+            <div className="tracking-[-0.020em] flex flex-row items-center text-lg font-medium">
+              Chapter 4&nbsp;
               <h2 className="text-xl font-semibold tracking-normal">#4</h2>
-            </h3>
+            </div>
             <p>Card description</p>
           </div>
           {/* Card */}
           <div className="bg-[#f6f3c9] p-[19px] rounded-2xl">
-            <h3 className="tracking-[-0.020em] flex flex-row items-center text-lg font-medium">
-              Chapter Five&nbsp;
+            <div className="tracking-[-0.020em] flex flex-row items-center text-lg font-medium">
+              Chapter 5&nbsp;
               <h2 className="text-xl font-semibold tracking-normal">#5</h2>
-            </h3>
+            </div>
             <p>Card description</p>
           </div>
           {/* Card */}
           <div className="bg-[#f6f3c9] p-[19px] rounded-2xl">
-            <h3 className="tracking-[-0.020em] flex flex-row items-center text-lg font-medium">
-              Chapter Six&nbsp;
+            <div className="tracking-[-0.020em] flex flex-row items-center text-lg font-medium">
+              Chapter 6&nbsp;
               <h2 className="text-xl font-semibold tracking-normal">#6</h2>
-            </h3>
+            </div>
             <p>Card description</p>
           </div>
         </section>
