@@ -27,10 +27,12 @@ export default function Home() {
           </div>
           <div className="lg:mt-0 mt-7 flex flex-col items-center justify-center">
             <img
+              draggable="false"
               className="rounded-3xl lg:flex hidden"
               src="http://placehold.co/512"
             />
             <img
+              draggable="false"
               className="rounded-3xl lg:hidden flex"
               src="http://placehold.co/330"
             />
