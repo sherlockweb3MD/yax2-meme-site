@@ -17,7 +17,7 @@ export default function Header() {
       <nav
         className={`${
           sidebarOpen ? "translate-x-[0%]" : "translate-x-[100%]"
-        } w-screen transition-all mt-[107px] space-y-5 px-6 py-5 ease-in-out duration-200 fixed top-0 right-0 bg-[#f1efce] h-full`}
+        } w-screen z-[9999] transition-all mt-[107px] space-y-5 px-6 py-5 ease-in-out duration-200 fixed top-0 right-0 bg-[#f1efce] h-full`}
       >
         <Link
           href="/"

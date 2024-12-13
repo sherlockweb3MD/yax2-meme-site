@@ -22,32 +22,35 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
         <meta
           name="description"
-          content="A brief description of your website for SEO"
+          content="$PEKKY is a funny cartoon duck mascot. Join the community now and dive into the meme magic!"
         />
-        <meta name="keywords" content="your, website, keywords, here" />
-        <meta name="author" content="Your Name or Company" />
+        <meta
+          name="keywords"
+          content="duck, funny, crypto, pumpfun, raydium, memecoin, telegram mini app, telegram app, duck app, pekky, pekkycoin"
+        />
+        <meta name="author" content="$PEKKY" />
         {/* Open Graph meta tags for social sharing */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Your Website Title" />
+        <meta property="og:title" content="$PEKKY" />
         <meta
           property="og:description"
           content="A brief description of your website for social media sharing"
         />
         <meta property="og:image" content="URL-to-an-image.jpg" />
-        <meta property="og:url" content="https://www.yourwebsite.com" />
+        <meta property="og:url" content="https://pekk-yweb-site.vercel.app" />
         {/* Twitter card meta tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Your Website Title" />
+        <meta name="twitter:title" content="$PEKKY" />
         <meta
           name="twitter:description"
-          content="A brief description of your website for Twitter"
+          content="$PEKKY is a funny cartoon duck mascot. Join the community now and dive into the meme magic!"
         />
         <meta name="twitter:image" content="URL-to-an-image.jpg" />
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
         {/* Theme color */}
         <meta name="theme-color" content="#ffffff" />
-        <title>$PEKKY - To The Moon!</title>
+        <title>$PEKKY - Dive into the meme magic!</title>
       </head>
       <body
         className={

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { animated, useSpring } from "react-spring";
 
 export default function TextScroller({ text }: { text: string }) {
-  const repeatedText = Array(32).fill(text).join(" —  ");
+  const repeatedText = Array(255).fill(text).join(" —  ");
   const [key, setKey] = useState(1);
   const scrolling = useSpring({
     from: { transform: "translate(-100%, 0)" },
