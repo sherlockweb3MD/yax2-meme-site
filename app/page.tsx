@@ -15,7 +15,7 @@ export default function Home() {
     >
       <div className="flex max-w-[100vw] overflow-y-auto mt-[96px] lg:mt-0 overflow-x-hidden justify-center items-center h-full min-h-[calc(100vh-108px)]">
         <section className="w-full flex mb-5 lg:mb-0 lg:mt-0 flex-col lg:flex-row items-center justify-between lg:px-36 px-5 xl:px-[220px]">
-          <div className="lg:hidden flex mt-2 flex-col items-center justify-center">
+          <div className="lg:hidden flex mt-3 flex-col items-center justify-center">
             <img
               onClick={() => playDuckSound()}
               draggable="false"
@@ -23,7 +23,7 @@ export default function Home() {
               src="https://pekk-yweb-site.vercel.app/pekky.svg"
             />
           </div>
-          <div className="flex flex-col mt-11 lg:mt-0 text-start items-start justify-center">
+          <div className="flex flex-col mt-10 lg:mt-0 text-start items-start justify-center">
             <h1 className="font-bold leading-10 md:leading-normal text-[36px] lg:text-[42px] xl:text-[46px]">
               $PEKKY to the Moon
             </h1>
