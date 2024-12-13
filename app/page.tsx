@@ -15,7 +15,7 @@ export default function Home() {
     >
       <div className="flex max-w-[100vw] overflow-y-auto mt-[96px] lg:mt-0 overflow-x-hidden justify-center items-center h-full min-h-[calc(100vh-108px)]">
         <section className="w-full flex mb-5 lg:mb-0 lg:mt-0 flex-col lg:flex-row items-center justify-between lg:px-40 px-5 xl:px-[220px]">
-          <div className="lg:hidden flex mt-4 flex-col items-center justify-center">
+          <div className="lg:hidden flex mt-7 flex-col items-center justify-center">
             <img
               onClick={() => playDuckSound()}
               draggable="false"
