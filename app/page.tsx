@@ -23,7 +23,7 @@ export default function Home() {
               src="https://pekk-yweb-site.vercel.app/pekky.svg"
             />
           </div>
-          <div className="flex flex-col mt-[52px] ml-9 lg:mt-0 text-start items-start justify-center">
+          <div className="flex flex-col mt-[52px] md:ml-9 lg:mt-0 text-start items-start justify-center">
             <h1 className="font-bold leading-10 md:leading-normal text-[36px] lg:text-[42px] xl:text-[46px]">
               $PEKKY to the Moon
             </h1>
@@ -36,7 +36,7 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="lg:flex hidden flex-col mr-9 items-center justify-center">
+          <div className="lg:flex hidden flex-col md:mr-9 items-center justify-center">
             <img
               onClick={() => playDuckSound()}
               draggable="false"
