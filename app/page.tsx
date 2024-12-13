@@ -14,7 +14,7 @@ export default function Home() {
       transition={{ duration: 0.3 }}
     >
       <div className="flex max-w-[100vw] overflow-y-auto mt-[96px] lg:mt-0 overflow-x-hidden justify-center items-center h-full min-h-[calc(100vh-108px)]">
-        <section className="w-full flex mb-5 lg:mb-0 lg:mt-0 flex-col lg:flex-row items-center justify-between lg:px-36 px-5 xl:px-[220px]">
+        <section className="w-full flex mb-5 lg:mb-0 lg:mt-0 flex-col lg:flex-row items-center justify-between lg:px-40 px-5 xl:px-[220px]">
           <div className="lg:hidden flex mt-4 flex-col items-center justify-center">
             <img
               onClick={() => playDuckSound()}
@@ -23,7 +23,7 @@ export default function Home() {
               src="https://pekk-yweb-site.vercel.app/pekky.svg"
             />
           </div>
-          <div className="flex flex-col mt-[52px] lg:mt-0 text-start items-start justify-center">
+          <div className="flex flex-col mt-[52px] ml-9 lg:mt-0 text-start items-start justify-center">
             <h1 className="font-bold leading-10 md:leading-normal text-[36px] lg:text-[42px] xl:text-[46px]">
               $PEKKY to the Moon
             </h1>
@@ -36,7 +36,7 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="lg:flex hidden flex-col mr-14 items-center justify-center">
+          <div className="lg:flex hidden flex-col mr-9 items-center justify-center">
             <img
               onClick={() => playDuckSound()}
               draggable="false"
