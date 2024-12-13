@@ -12,7 +12,7 @@ export default function Tokenomics() {
       <div className="flex flex-col mt-[108px] lg:mt-0 max-w-[100vw] overflow-x-hidden justify-center items-center h-[calc(100vh-108px)]">
         <section className="w-full flex mt-[240px] md:mt-0 flex-row items-center justify-center px-16">
           <div className="flex flex-col text-center items-center justify-start">
-            <h1 className="font-bold text-[32px] lg:text-[36px] xl:text-[40px]">Tokenomics</h1>
+            <h1 className="font-bold text-[32px] lg:text-[36px] xl:text-[40px]">TOKENOMICS</h1>
             <h2 className="font-medium leading-7 text-lg xl:text-xl">Pekky tokenomics</h2>
           </div>
         </section>

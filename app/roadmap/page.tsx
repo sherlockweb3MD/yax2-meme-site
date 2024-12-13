@@ -13,10 +13,10 @@ export default function Roadmap() {
         <section className="w-full flex mt-[240px] md:mt-0 flex-row items-center justify-center px-16">
           <div className="flex flex-col text-center items-center justify-start">
             <h1 className="font-bold text-[32px] lg:text-[36px] xl:text-[40px]">
-              Roadmap
+              OUR ROADMAP
             </h1>
             <h2 className="font-medium leading-7 text-lg xl:text-xl">
-              Pekky roadmap
+              This roadmap outlines our journey to exciting milestones,<br/> including listings on major exchanges. Let's pave the way for<br/> innovative developments.
             </h2>
           </div>
         </section>
