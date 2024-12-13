@@ -27,7 +27,7 @@ export default function Home() {
             <h1 className="font-bold leading-10 md:leading-normal text-[36px] lg:text-[42px] xl:text-[46px]">
               $PEKKY to the Moon
             </h1>
-            <h2 className="font-medium leading-7 mt-1 xl:max-w-[400px] text-xl">
+            <h2 className="font-medium leading-7 mt-1 md:max-w-[400px] text-xl">
               $PEKKY is a funny cartoon duck mascot. Join the community now and dive into the meme magic!
             </h2>
             <div className="mt-3.5">
