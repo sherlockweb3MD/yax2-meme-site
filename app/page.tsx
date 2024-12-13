@@ -3,6 +3,10 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export default function Home() {
+  const playDuckSound = () => {
+    const audio = new Audio("/sounds/duck.mp3");
+    audio.play();
+  };
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -13,6 +17,7 @@ export default function Home() {
         <section className="w-full flex mb-5 lg:mb-0 lg:mt-0 flex-col lg:flex-row items-center justify-between lg:px-16 px-5 xl:px-24">
           <div className="lg:hidden flex flex-col items-center justify-center">
             <img
+              onClick={() => playDuckSound()}
               draggable="false"
               className="rounded-3xl active:opacity-[98%] active:scale-[0.95] transition-all ease-linear duration-100 cursor-pointer size-[170px]"
               src="https://pekk-yweb-site.vercel.app/pekky.svg"
@@ -35,6 +40,7 @@ export default function Home() {
           </div>
           <div className="lg:flex hidden flex-col mr-14 items-center justify-center">
             <img
+              onClick={() => playDuckSound()}
               draggable="false"
               className="rounded-3xl active:opacity-[98%] size-[280px] active:scale-[0.95] transition-all ease-linear duration-100 cursor-pointer"
               src="https://pekk-yweb-site.vercel.app/pekky.svg"
