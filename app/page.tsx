@@ -27,10 +27,8 @@ export default function Home() {
             <h1 className="font-bold leading-10 md:leading-normal text-[36px] lg:text-[42px] xl:text-[46px]">
               $PEKKY to the Moon
             </h1>
-            <h2 className="font-medium leading-7 text-xl">
-              $PEKKY is a funny cartoon duck mascot.
-              <br /> Join the community now and dive into
-              <br /> the meme magic!
+            <h2 className="font-medium leading-7 xl:max-w-[400px] text-xl">
+              $PEKKY is a funny cartoon duck mascot. Join the community now and dive into the meme magic!
             </h2>
             <div className="mt-3.5">
               <button className="font-semibold text-lg px-5 text-white active:scale-[0.98] transition-all ease-linear duration-100 hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 py-2.5 rounded-2xl">
