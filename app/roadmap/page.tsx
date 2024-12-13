@@ -4,23 +4,26 @@ import { motion } from "framer-motion";
 
 const phases = [
   {
-    items: ["Launch on solana", "Website landing page", "Presale"],
-  },
-  {
     items: [
-      "Public Presale",
-      "DexScreener and BirdEye Update",
-      "Build our Community",
+      "Launch the telegram",
+      "Publish the website",
+      "Build a strong community",
     ],
   },
   {
-    items: ["Trending on X", "CoinGecko and CMC Listing", "NFT Airdrop"],
+    items: [
+      "Launch on pump.fun",
+      "Airdrop for early members",
+      "Launch Pekky the Duck game",
+    ],
+  },
+  {
+    items: ["CoinGecko and CMC Listing", "Hire crypto influencers"],
   },
   {
     items: [
-      "Establish Sharkcat Presence",
-      "Promote real-world use cases",
-      "Ensure long-term sustainability",
+      "Establish DAO's for token's future",
+      "Insure long-term sustainability",
     ],
   },
 ];
