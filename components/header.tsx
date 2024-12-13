@@ -99,7 +99,7 @@ export default function Header() {
                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
               </svg>
             </button>
-            <button className="hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl active:scale-[0.98] transition-all ease-linear duration-100">
+            {/*<button className="hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl active:scale-[0.98] transition-all ease-linear duration-100">
               <svg
                 width="43"
                 height="43"
@@ -132,7 +132,7 @@ export default function Header() {
                   </clipPath>
                 </defs>
               </svg>
-            </button>
+            </button>*/}
           </div>
           <button className="font-semibold w-full px-4 text-white active:scale-[0.98] transition-all ease-linear duration-100 hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 py-2.5 rounded-2xl">
             Join now
@@ -269,7 +269,7 @@ export default function Header() {
                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
               </svg>
             </button>
-            <button className="hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl active:scale-[0.98] transition-all ease-linear duration-100">
+            {/*<button className="hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl active:scale-[0.98] transition-all ease-linear duration-100">
               <svg
                 width="43"
                 height="43"
@@ -302,7 +302,7 @@ export default function Header() {
                   </clipPath>
                 </defs>
               </svg>
-            </button>
+            </button>*/}
             <button className="font-semibold px-4 text-white active:scale-[0.98] transition-all ease-linear duration-100 hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 py-2.5 rounded-2xl">
               Join now
             </button>
