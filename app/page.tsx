@@ -23,7 +23,7 @@ export default function Home() {
               src="https://pekk-yweb-site.vercel.app/pekky.svg"
             />
           </div>
-          <div className="flex flex-col mt-10 lg:mt-0 text-start items-start justify-center">
+          <div className="flex flex-col mt-11 lg:mt-0 text-start items-start justify-center">
             <h1 className="font-bold leading-10 md:leading-normal text-[36px] lg:text-[42px] xl:text-[46px]">
               $PEKKY to the Moon
             </h1>
