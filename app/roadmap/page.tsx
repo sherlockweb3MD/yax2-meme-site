@@ -61,7 +61,10 @@ export default function Roadmap() {
                   <h2 className="text-xl font-bold tracking-normal">#1</h2>
                 </div>
                 {phases[0].items.map((text: string) => (
-                  <div className="flex flex-row tracking-tight mt-1 items-center text-center justify-start">
+                  <div
+                    key={text + Math.random() * 100}
+                    className="flex flex-row tracking-tight mt-1 items-center text-center justify-start"
+                  >
                     <span className="size-2 bg-zinc-800 rounded-full" />
                     &nbsp;
                     <span className="font-medium text-[18px]">{text}</span>
@@ -78,7 +81,10 @@ export default function Roadmap() {
                   <h2 className="text-xl font-bold tracking-normal">#2</h2>
                 </div>
                 {phases[1].items.map((text: string) => (
-                  <div className="flex flex-row tracking-tight mt-1 items-center text-center justify-start">
+                  <div
+                    key={text + Math.random() * 100}
+                    className="flex flex-row tracking-tight mt-1 items-center text-center justify-start"
+                  >
                     <span className="size-2 bg-zinc-800 rounded-full" />
                     &nbsp;
                     <span className="font-medium text-[18px]">{text}</span>
@@ -95,7 +101,10 @@ export default function Roadmap() {
                   <h2 className="text-xl font-bold tracking-normal">#3</h2>
                 </div>
                 {phases[2].items.map((text: string) => (
-                  <div className="flex flex-row tracking-tight mt-1 items-center text-center justify-start">
+                  <div
+                    key={text + Math.random() * 100}
+                    className="flex flex-row tracking-tight mt-1 items-center text-center justify-start"
+                  >
                     <span className="size-2 bg-zinc-800 rounded-full" />
                     &nbsp;
                     <span className="font-medium text-[18px]">{text}</span>
@@ -112,7 +121,10 @@ export default function Roadmap() {
                   <h2 className="text-xl font-bold tracking-normal">#4</h2>
                 </div>
                 {phases[3].items.map((text: string) => (
-                  <div className="flex flex-row tracking-tight mt-1 items-center text-center justify-start">
+                  <div
+                    key={text + Math.random() * 100}
+                    className="flex flex-row tracking-tight mt-1 items-center text-center justify-start"
+                  >
                     <span className="size-2 bg-zinc-800 rounded-full" />
                     &nbsp;
                     <span className="font-medium text-[18px]">{text}</span>
@@ -164,7 +176,10 @@ export default function Roadmap() {
                 <h2 className="text-xl font-bold tracking-normal">#1</h2>
               </div>
               {phases[0].items.map((text: string) => (
-                <div className="flex flex-row mt-1 items-center text-center justify-start">
+                <div
+                  key={text + Math.random() * 100}
+                  className="flex flex-row mt-1 items-center text-center justify-start"
+                >
                   <span className="size-2 bg-zinc-800 rounded-full" />
                   &nbsp;
                   <span className="font-medium tracking-tight text-[18px]">
@@ -180,7 +195,10 @@ export default function Roadmap() {
                 <h2 className="text-xl font-bold tracking-normal">#3</h2>
               </div>
               {phases[2].items.map((text: string) => (
-                <div className="flex flex-row mt-1 items-center text-center justify-start">
+                <div
+                  key={text + Math.random() * 100}
+                  className="flex flex-row mt-1 items-center text-center justify-start"
+                >
                   <span className="size-2 bg-zinc-800 rounded-full" />
                   &nbsp;
                   <span className="font-medium tracking-tight text-[18px]">
@@ -199,7 +217,10 @@ export default function Roadmap() {
                 <h2 className="text-xl font-bold tracking-normal">#2</h2>
               </div>
               {phases[1].items.map((text: string) => (
-                <div className="flex flex-row mt-1 items-center text-center justify-start">
+                <div
+                  key={text + Math.random() * 100}
+                  className="flex flex-row mt-1 items-center text-center justify-start"
+                >
                   <span className="size-2 bg-zinc-800 rounded-full" />
                   &nbsp;
                   <span className="font-medium tracking-tight text-[18px]">
@@ -215,7 +236,10 @@ export default function Roadmap() {
                 <h2 className="text-xl font-bold tracking-normal">#4</h2>
               </div>
               {phases[3].items.map((text: string) => (
-                <div className="flex flex-row mt-1 items-center text-center justify-start">
+                <div
+                  key={text + Math.random() * 100}
+                  className="flex flex-row mt-1 items-center text-center justify-start"
+                >
                   <span className="size-2 bg-zinc-800 rounded-full" />
                   &nbsp;
                   <span className="font-medium tracking-tight text-[18px]">
