@@ -14,7 +14,7 @@ export default function Home() {
       transition={{ duration: 0.3 }}
     >
       <div className="flex max-w-[100vw] overflow-y-auto mt-[96px] lg:mt-0 overflow-x-hidden justify-center items-center h-full min-h-[calc(100vh-108px)]">
-        <section className="w-full flex mb-5 lg:mb-0 lg:mt-0 flex-col lg:flex-row items-center justify-between lg:px-40 px-5 xl:px-[220px]">
+        <section className="w-full flex mb-5 lg:mb-0 lg:mt-0 flex-col lg:flex-row items-center justify-between lg:px-44 px-5 xl:px-[195px]">
           <div className="lg:hidden flex mt-7 flex-col items-center justify-center">
             <img
               onClick={() => playDuckSound()}
