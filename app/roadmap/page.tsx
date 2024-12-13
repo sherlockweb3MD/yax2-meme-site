@@ -128,28 +128,28 @@ export default function Roadmap() {
               <div className="bg-[#f9f5cc] flex items-center justify-center rounded-full size-7">
                 <div className="bg-[#e9df57] rounded-full size-5"></div>
               </div>
-              <div className="w-full min-w-[32px] md:min-w-[36px] h-px border border-dashed border-zinc-800 md:-translate-x-[100%] translate-x-[85%] absolute top-1/2 transform -translate-y-1/2"></div>
+              <div className="w-full min-w-[32px] md:min-w-[36px] h-px border border-dashed border-[#e9df57] md:-translate-x-[100%] translate-x-[85%] absolute top-1/2 transform -translate-y-1/2"></div>
             </div>
             {/* Phase 2 ball */}
             <div className="mt-[124px] relative">
               <div className="bg-[#f9f5cc] flex items-center justify-center rounded-full size-7">
                 <div className="bg-[#e9df57] rounded-full size-5"></div>
               </div>
-              <div className="w-full min-w-[32px] h-px border border-dashed border-zinc-800 translate-x-[85%] absolute top-1/2 transform -translate-y-1/2"></div>
+              <div className="w-full min-w-[32px] h-px border border-dashed border-[#e9df57] translate-x-[85%] absolute top-1/2 transform -translate-y-1/2"></div>
             </div>
             {/* Phase 3 ball */}
             <div className="mt-[124px] relative">
               <div className="bg-[#f9f5cc] flex items-center justify-center rounded-full size-7">
                 <div className="bg-[#e9df57] rounded-full size-5"></div>
               </div>
-              <div className="w-full min-w-[36px] h-px border border-dashed border-zinc-800 -translate-x-[100%] absolute top-1/2 transform -translate-y-1/2"></div>
+              <div className="w-full min-w-[36px] h-px border border-dashed border-[#e9df57] -translate-x-[100%] absolute top-1/2 transform -translate-y-1/2"></div>
             </div>
             {/* Phase 4 ball */}
             <div className="mt-[124px] relative">
               <div className="bg-[#f9f5cc] flex items-center justify-center rounded-full size-7">
                 <div className="bg-[#e9df57] rounded-full size-5"></div>
               </div>
-              <div className="w-full min-w-[32px] h-px border border-dashed border-zinc-800 translate-x-[85%] absolute top-1/2 transform -translate-y-1/2"></div>
+              <div className="w-full min-w-[32px] h-px border border-dashed border-[#e9df57] translate-x-[85%] absolute top-1/2 transform -translate-y-1/2"></div>
             </div>
           </div>
           {/* Left side */}
