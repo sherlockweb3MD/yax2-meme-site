@@ -19,7 +19,7 @@ export default function Home() {
             <img
               onClick={() => playDuckSound()}
               draggable="false"
-              className="rounded-3xl active:opacity-[98%] active:scale-[0.95] transition-all ease-linear duration-100 cursor-pointer size-[170px]"
+              className="rounded-3xl active:opacity-[98%] active:scale-[0.95] transition-all ease-linear duration-100 cursor-pointer size-[220px]"
               src="https://pekk-yweb-site.vercel.app/pekky.svg"
             />
           </div>
