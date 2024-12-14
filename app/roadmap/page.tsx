@@ -11,12 +11,12 @@ export default function RoadmapPage() {
       transition={{ duration: 0.3 }}
     >
       <div className="flex flex-col mt-[108px] lg:mt-0 max-w-[100vw] overflow-hidden justify-center items-center min-h-[calc(100vh-108px)]">
-        <section className="w-full flex mt-[58px] md:mt-[35px] flex-row items-center justify-center px-5 md:px-8 lg:px-12 xl:px-16">
+        <section className="w-full flex mt-[58px] md:mt-[36px] flex-row items-center justify-center px-5 md:px-8 lg:px-12 xl:px-16">
           <div className="flex flex-col text-center items-center justify-start">
             <h1 className="font-bold text-[32px] lg:text-[36px] xl:text-[40px]">
               {config.roadmapPage.title}
             </h1>
-            <h2 className="font-medium leading-7 text-lg xl:text-xl">
+            <h2 className="font-medium md:max-w-[600px] leading-7 text-lg xl:text-xl">
               {config.roadmapPage.description
                 .split("\n")
                 .map((line: any, index: any) => (
