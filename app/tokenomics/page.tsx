@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import config, { tokenCA } from "@/config";
 
-export default function Tokenomics() {
+export default function TokenomicsPage() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -10,60 +11,65 @@ export default function Tokenomics() {
       transition={{ duration: 0.3 }}
     >
       <div className="flex flex-col mt-[108px] lg:mt-0 max-w-[100vw] overflow-x-hidden justify-center items-center h-[calc(100vh-108px)]">
-        <section className="w-full flex mt-[240px] md:mt-0 flex-row items-center justify-center px-16">
-          <div className="flex flex-col text-center items-center justify-start">
-            <h1 className="font-bold text-[32px] lg:text-[36px] xl:text-[40px]">TOKENOMICS</h1>
-            <h2 className="font-medium leading-7 text-lg xl:text-xl">Pekky tokenomics</h2>
+        <section className="w-full flex mt-[24px] md:mt-0 flex-col items-center justify-center px-6 md:px-16">
+          <div className="flex flex-col w-full text-center items-center justify-start">
+            <h1 className="font-bold text-[32px] lg:text-[36px] xl:text-[40px]">
+              {config.tokenomicsPage.title}
+            </h1>
+            <h2 className="font-medium leading-7 text-lg xl:text-xl">
+              {config.tokenomicsPage.description
+                .split("\n")
+                .map((line: any, index: any) => (
+                  <React.Fragment key={index}>
+                    {line}
+                    <br />
+                  </React.Fragment>
+                ))}
+            </h2>
           </div>
-        </section>
-        <section className="grid px-4 pb-4 md:grid-cols-2 grid-cols-1 lg:grid-cols-3 w-full max-w-screen-md mt-8 lg:mt-10 gap-2 grid-rows-2">
-          {/* Card */}
-          <div className="bg-[#f6f3c9] p-[19px] w-full rounded-2xl">
-            <div className="tracking-[-0.020em] flex flex-row items-center text-lg font-medium">
-              Community Rewards&nbsp;
-              <h2 className="text-xl font-semibold tracking-normal">%20</h2>
-            </div>
-            <p>Card description</p>
+          <div className="w-full flex items-center justify-center">
+            <img
+              src="/charts/tokenomics.png"
+              className="size-[300px] rounded-full"
+              draggable="false"
+            />
           </div>
-          {/* Card */}
-          <div className="bg-[#f6f3c9] p-[19px] rounded-2xl">
-            <div className="tracking-[-0.020em] flex flex-row items-center text-lg font-medium">
-              Marketing&nbsp;
-              <h2 className="text-xl font-semibold tracking-normal">%35</h2>
+          <div className="flex w-full flex-col items-center justify-center text-center">
+            <div className="flex flex-row items-center justify-center space-x-2">
+              <div className="bg-yellow-400 border border-zinc-900/15 active:scale-[0.98] transition-all ease-linear duration-100 rounded-full w-5 h-5" />
+              <span className="font-semibold text-lg mt-1">
+                {"->"} Total Supply: 1 Billion $PEKKY
+              </span>
             </div>
-            <p>Card description</p>
-          </div>
-          {/* Card */}
-          <div className="bg-[#f6f3c9] p-[19px] rounded-2xl">
-            <div className="tracking-[-0.020em] flex flex-row items-center text-lg font-medium">
-              Blablabla&nbsp;
-              <h2 className="text-xl font-semibold tracking-normal">%55</h2>
+            <div className="flex flex-row items-center justify-center space-x-2">
+              <div className="bg-[#1132b5] border border-zinc-900/15 active:scale-[0.98] transition-all ease-linear duration-100 rounded-full w-5 h-5" />
+              <span className="font-semibold text-lg mt-1">
+                {"->"} Liquidity Pool (
+                <a
+                  className={`${
+                    tokenCA
+                      ? "text-blue-500 hover:text-blue-600/90 hover:underline"
+                      : ""
+                  } transition-all ease-linear duration-100`}
+                  href={tokenCA && `https://pump.fun/coin/${tokenCA}`}
+                >
+                  Pump.fun
+                </a>
+                )
+              </span>
             </div>
-            <p>Card description</p>
-          </div>
-          {/* Card */}
-          <div className="bg-[#f6f3c9] p-[19px] rounded-2xl">
-            <div className="tracking-[-0.020em] flex flex-row items-center text-lg font-medium">
-              Bablalbal&nbsp;
-              <h2 className="text-xl font-semibold tracking-normal">%55</h2>
+            <div className="flex flex-row items-center justify-center space-x-2">
+              <div className="bg-[#de44a3] border border-zinc-900/15 active:scale-[0.98] transition-all ease-linear duration-100 rounded-full w-5 h-5" />
+              <span className="font-semibold text-lg mt-1">
+                {"->"} Community Airdrop
+              </span>
             </div>
-            <p>Card description</p>
-          </div>
-          {/* Card */}
-          <div className="bg-[#f6f3c9] p-[19px] rounded-2xl">
-            <div className="tracking-[-0.020em] flex flex-row items-center text-lg font-medium">
-              Bllablalba&nbsp;
-              <h2 className="text-xl font-semibold tracking-normal">%55</h2>
+            <div className="flex flex-row items-center justify-center space-x-2">
+              <div className="bg-[#69e0fe] border border-zinc-900/15 active:scale-[0.98] transition-all ease-linear duration-100 rounded-full w-5 h-5" />
+              <span className="font-semibold text-lg mt-1">
+                {"->"} Dev Holdings
+              </span>
             </div>
-            <p>Card description</p>
-          </div>
-          {/* Card */}
-          <div className="bg-[#f6f3c9] p-[19px] rounded-2xl">
-            <div className="tracking-[-0.020em] flex flex-row items-center text-lg font-medium">
-              Bblalbla&nbsp;
-              <h2 className="text-xl font-semibold tracking-normal">%55</h2>
-            </div>
-            <p>Card description</p>
           </div>
         </section>
       </div>

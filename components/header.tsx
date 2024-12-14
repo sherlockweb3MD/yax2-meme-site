@@ -4,16 +4,21 @@ import TextScroller from "./textslider";
 import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import config, {
+  instagramLink,
+  telegramLink,
+  tokenCA,
+  twitterLink,
+} from "@/config";
 
 // Header component
 export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
-  const [sidebarOpen, setSidebarOpen] = useState<boolean>(false); // State for sidebar (toggle)
-  const sliderText = "$PEKKY To The Moon!";
+  const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
   return (
     <>
-      {/* Hamburger menu for mobile devices */}
+      {/* Toggleable Hamburger menu for mobile devices */}
       <nav
         className={`${
           sidebarOpen ? "translate-x-[0%]" : "translate-x-[100%]"
@@ -42,7 +47,11 @@ export default function Header() {
         </Link>
         <div className="flex flex-col h-full relative items-center justify-center space-y-3">
           <div className="flex flex-row items-center justify-center space-x-2.5">
-            <button className="hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl active:scale-[0.98] transition-all ease-linear duration-100">
+            <a
+              id="twitterButton"
+              href={twitterLink}
+              className="hover:bg-yellow-500/80 border border-[#9e782c] shadow-[2px_2px_0_#9e782c] active:shadow-[0.5px_0.5px_0_#9e782c] active:translate-x-[1px] active:translate-y-[1px] active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl active:scale-[0.99] transition-all ease-linear duration-100"
+            >
               <svg
                 width="43"
                 height="43"
@@ -67,8 +76,12 @@ export default function Header() {
                   </clipPath>
                 </defs>
               </svg>
-            </button>
-            <button className="hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl active:scale-[0.98] transition-all ease-linear duration-100">
+            </a>
+            <a
+              id="telegramButton"
+              href={telegramLink}
+              className="hover:bg-yellow-500/80 border border-[#9e782c] shadow-[2px_2px_0_#9e782c] active:shadow-[0.5px_0.5px_0_#9e782c] active:translate-x-[1px] active:translate-y-[1px] active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl active:scale-[0.99] transition-all ease-linear duration-100"
+            >
               <svg
                 width="43"
                 height="43"
@@ -81,8 +94,12 @@ export default function Header() {
                   fill="white"
                 />
               </svg>
-            </button>
-            <button className="hover:bg-yellow-500/80 items-center justify-center flex w-[43px] h-[43px] active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl active:scale-[0.98] transition-all ease-linear duration-100">
+            </a>
+            <a
+              id="instagramButton"
+              href={instagramLink}
+              className="hover:bg-yellow-500/80 w-[44px] h-[44px] active:scale-[0.99] flex items-center justify-center border border-[#9e782c] shadow-[2px_2px_0_#9e782c] active:shadow-[0.5px_0.5px_0_#9e782c] active:translate-x-[1px] active:translate-y-[1px] active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl transition-all ease-linear duration-100"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="26"
@@ -98,57 +115,69 @@ export default function Header() {
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
               </svg>
-            </button>
-            {/*<button className="hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl active:scale-[0.98] transition-all ease-linear duration-100">
-              <svg
-                width="43"
-                height="43"
-                viewBox="0 0 40 40"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+            </a>
+            {tokenCA && (
+              <a
+                id="dexscreenerButton"
+                href={`https://dexscreener.com/solana/${tokenCA}`}
+                className="hover:bg-yellow-500/80 border border-[#9e782c] shadow-[2px_2px_0_#9e782c] active:shadow-[0.5px_0.5px_0_#9e782c] active:translate-x-[1px] active:translate-y-[1px] active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl active:scale-[0.99] transition-all ease-linear duration-100"
               >
-                <g clipPath="url(#clip0_76_47)">
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M21.6515 15.9055C22.4162 15.5242 23.3893 14.9628 24.3636 14.1937C24.569 14.6203 24.5915 14.9926 24.4856 15.2932C24.4106 15.505 24.2693 15.6893 24.0835 15.8358C23.8822 15.9943 23.6309 16.1096 23.3531 16.1719C22.8259 16.2907 22.2104 16.2213 21.6515 15.9055ZM21.7841 19.8127L22.7964 20.3974C20.7294 21.5559 20.1675 23.7071 19.5 25.8023C18.8326 23.7071 18.2706 21.5559 16.2036 20.3974L17.216 19.8127C17.3139 19.7757 17.3976 19.7086 17.4551 19.6211C17.5126 19.5336 17.5409 19.4302 17.536 19.3256C17.4432 17.3633 17.9731 16.4956 18.6877 15.9507C18.9441 15.7556 19.2239 15.6576 19.5 15.6576C19.7761 15.6576 20.0559 15.7556 20.3123 15.9507C21.027 16.4956 21.5568 17.3633 21.4641 19.3256C21.4591 19.4302 21.4875 19.5336 21.5449 19.6211C21.6024 19.7086 21.6861 19.7757 21.7841 19.8127ZM19.5 7C20.6701 7.03142 21.8432 7.25858 22.8613 7.7005C23.5663 8.00692 24.2241 8.41167 24.8198 8.89567C25.0888 9.11417 25.3103 9.32525 25.5543 9.56825C26.2124 9.591 27.1741 8.85992 27.6206 8.17583C26.8522 10.695 23.3457 13.6699 20.9181 14.8083C20.9171 14.8078 20.9165 14.8073 20.9157 14.8068C20.4801 14.4741 19.9901 14.3078 19.5 14.3078C19.0099 14.3078 18.52 14.4741 18.0843 14.8068C18.0836 14.8072 18.0829 14.8079 18.0819 14.8083C15.6542 13.6699 12.1478 10.695 11.3794 8.17583C11.8258 8.85992 12.7876 9.591 13.4456 9.56825C13.6897 9.32533 13.9112 9.11417 14.1801 8.89567C14.7758 8.41167 15.4336 8.00692 16.1386 7.7005C17.1568 7.25858 18.3299 7.03142 19.5 7ZM17.3485 15.9055C16.5838 15.5242 15.6106 14.9628 14.6365 14.1937C14.4311 14.6203 14.4086 14.9926 14.5143 15.2932C14.5894 15.505 14.7307 15.6893 14.9165 15.8358C15.1178 15.9943 15.3691 16.1096 15.647 16.1719C16.1741 16.2907 16.7896 16.2213 17.3485 15.9055Z"
-                    fill="white"
-                  />
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M25.4306 13.2513C25.9669 12.7101 26.4395 12.111 26.8195 11.5764L27.0125 11.9397C27.6338 13.1827 27.9567 14.4208 27.9567 15.8142L27.9553 18.0252L27.967 19.1713C28.012 21.9852 28.6208 24.8321 30 27.4374L27.1144 25.1106L25.0727 28.4238L22.9277 26.4046L19.5 31.967L16.0723 26.4047L13.9274 28.4239L11.8857 25.1107L9 27.4375C10.3792 24.8322 10.988 21.9853 11.0331 19.1714L11.0448 18.0252L11.0434 15.8142C11.0434 14.4208 11.3662 13.1827 11.9877 11.9397L12.1806 11.5765C12.5606 12.1111 13.0331 12.7101 13.5695 13.2514L13.402 13.5993C13.0766 14.2751 12.9688 15.0307 13.2223 15.7492C13.3858 16.2121 13.684 16.609 14.0685 16.912C14.4418 17.2062 14.8837 17.4046 15.3463 17.5087C15.6476 17.5766 15.9546 17.6045 16.2596 17.595C16.1884 17.9984 16.1573 18.4168 16.1553 18.8432L13.4333 20.4153L15.5338 21.5928C15.7017 21.6869 15.8615 21.7947 16.0117 21.9152C17.7434 23.47 18.7846 28.0698 19.5001 30.3165C20.2157 28.0698 21.2568 23.47 22.9886 21.9152C23.1387 21.7947 23.2985 21.6869 23.4664 21.5928L25.5669 20.4153L22.8448 18.8432C22.8428 18.4168 22.8117 17.9984 22.7406 17.595C23.0456 17.6045 23.3526 17.5766 23.6539 17.5087C24.1165 17.4046 24.5584 17.2062 24.9317 16.912C25.3161 16.609 25.6144 16.2121 25.7777 15.7492C26.0313 15.0307 25.9235 14.2752 25.5982 13.5993L25.4307 13.2514L25.4306 13.2513Z"
-                    fill="white"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_76_47">
-                    <rect
-                      width="21"
-                      height="25"
-                      fill="black"
-                      transform="translate(9 7)"
+                <svg
+                  width="43"
+                  height="43"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_76_47)">
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M21.6515 15.9055C22.4162 15.5242 23.3893 14.9628 24.3636 14.1937C24.569 14.6203 24.5915 14.9926 24.4856 15.2932C24.4106 15.505 24.2693 15.6893 24.0835 15.8358C23.8822 15.9943 23.6309 16.1096 23.3531 16.1719C22.8259 16.2907 22.2104 16.2213 21.6515 15.9055ZM21.7841 19.8127L22.7964 20.3974C20.7294 21.5559 20.1675 23.7071 19.5 25.8023C18.8326 23.7071 18.2706 21.5559 16.2036 20.3974L17.216 19.8127C17.3139 19.7757 17.3976 19.7086 17.4551 19.6211C17.5126 19.5336 17.5409 19.4302 17.536 19.3256C17.4432 17.3633 17.9731 16.4956 18.6877 15.9507C18.9441 15.7556 19.2239 15.6576 19.5 15.6576C19.7761 15.6576 20.0559 15.7556 20.3123 15.9507C21.027 16.4956 21.5568 17.3633 21.4641 19.3256C21.4591 19.4302 21.4875 19.5336 21.5449 19.6211C21.6024 19.7086 21.6861 19.7757 21.7841 19.8127ZM19.5 7C20.6701 7.03142 21.8432 7.25858 22.8613 7.7005C23.5663 8.00692 24.2241 8.41167 24.8198 8.89567C25.0888 9.11417 25.3103 9.32525 25.5543 9.56825C26.2124 9.591 27.1741 8.85992 27.6206 8.17583C26.8522 10.695 23.3457 13.6699 20.9181 14.8083C20.9171 14.8078 20.9165 14.8073 20.9157 14.8068C20.4801 14.4741 19.9901 14.3078 19.5 14.3078C19.0099 14.3078 18.52 14.4741 18.0843 14.8068C18.0836 14.8072 18.0829 14.8079 18.0819 14.8083C15.6542 13.6699 12.1478 10.695 11.3794 8.17583C11.8258 8.85992 12.7876 9.591 13.4456 9.56825C13.6897 9.32533 13.9112 9.11417 14.1801 8.89567C14.7758 8.41167 15.4336 8.00692 16.1386 7.7005C17.1568 7.25858 18.3299 7.03142 19.5 7ZM17.3485 15.9055C16.5838 15.5242 15.6106 14.9628 14.6365 14.1937C14.4311 14.6203 14.4086 14.9926 14.5143 15.2932C14.5894 15.505 14.7307 15.6893 14.9165 15.8358C15.1178 15.9943 15.3691 16.1096 15.647 16.1719C16.1741 16.2907 16.7896 16.2213 17.3485 15.9055Z"
+                      fill="white"
                     />
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>*/}
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M25.4306 13.2513C25.9669 12.7101 26.4395 12.111 26.8195 11.5764L27.0125 11.9397C27.6338 13.1827 27.9567 14.4208 27.9567 15.8142L27.9553 18.0252L27.967 19.1713C28.012 21.9852 28.6208 24.8321 30 27.4374L27.1144 25.1106L25.0727 28.4238L22.9277 26.4046L19.5 31.967L16.0723 26.4047L13.9274 28.4239L11.8857 25.1107L9 27.4375C10.3792 24.8322 10.988 21.9853 11.0331 19.1714L11.0448 18.0252L11.0434 15.8142C11.0434 14.4208 11.3662 13.1827 11.9877 11.9397L12.1806 11.5765C12.5606 12.1111 13.0331 12.7101 13.5695 13.2514L13.402 13.5993C13.0766 14.2751 12.9688 15.0307 13.2223 15.7492C13.3858 16.2121 13.684 16.609 14.0685 16.912C14.4418 17.2062 14.8837 17.4046 15.3463 17.5087C15.6476 17.5766 15.9546 17.6045 16.2596 17.595C16.1884 17.9984 16.1573 18.4168 16.1553 18.8432L13.4333 20.4153L15.5338 21.5928C15.7017 21.6869 15.8615 21.7947 16.0117 21.9152C17.7434 23.47 18.7846 28.0698 19.5001 30.3165C20.2157 28.0698 21.2568 23.47 22.9886 21.9152C23.1387 21.7947 23.2985 21.6869 23.4664 21.5928L25.5669 20.4153L22.8448 18.8432C22.8428 18.4168 22.8117 17.9984 22.7406 17.595C23.0456 17.6045 23.3526 17.5766 23.6539 17.5087C24.1165 17.4046 24.5584 17.2062 24.9317 16.912C25.3161 16.609 25.6144 16.2121 25.7777 15.7492C26.0313 15.0307 25.9235 14.2752 25.5982 13.5993L25.4307 13.2514L25.4306 13.2513Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_76_47">
+                      <rect
+                        width="21"
+                        height="25"
+                        fill="black"
+                        transform="translate(9 7)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            )}
           </div>
-          <button className="font-semibold w-full px-4 text-white active:scale-[0.98] transition-all ease-linear duration-100 hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 py-2.5 rounded-2xl">
-            Join now
-          </button>
+          {config.homeMainSection.buttons.map((button: any, index: number) => (
+            <a
+              key={index}
+              href={button.href || "about:blank"}
+              className="font-semibold text-center w-[55%] border border-[#9e782c] shadow-[2px_2px_0_#9e782c] active:shadow-[0.5px_0.5px_0_#9e782c] active:translate-x-[1px] active:translate-y-[1px] text-white active:scale-[0.99] transition-all ease-linear duration-100 hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 py-[8.95px] rounded-xl"
+            >
+              {button.text}
+            </a>
+          ))}
         </div>
       </nav>
       {/* Red slider for sm devices */}
-      <nav className="h-[40px] z-[9999] flex w-full top-0 fixed lg:hidden text-white border-b-2 border-zinc-800 font-medium items-center justify-center bg-red-500">
-        <TextScroller text={sliderText} />
+      <nav className="h-[40px] z-[9997] flex w-full top-0 fixed lg:hidden text-white border-b-2 border-zinc-800 font-medium items-center justify-center bg-red-500">
+        <TextScroller />
       </nav>
       <motion.div
         initial={{ opacity: 0, x: -0 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3 }}
       >
-        <header className="fixed z-[9999] grid lg:mt-0 mt-[40px] px-5 grid-cols-2 md:grid-cols-3 grid-rows-1 top-0 left-0 right-0 w-full h-[68px] bg-[#fefce1] border-b-2 border-zinc-800">
+        <header className="fixed z-[9998] grid lg:mt-0 mt-[40px] px-5 grid-cols-2 md:grid-cols-3 grid-rows-1 top-0 left-0 right-0 w-full h-[68px] bg-[#fefce1] border-b-2 border-zinc-800">
           <div className="w-full flex items-center flex-row justify-start">
             <h1
               onClick={() => router.replace("/")}
@@ -212,7 +241,11 @@ export default function Header() {
             </button>
           </div>
           <div className="w-full hidden lg:flex flex-row space-x-2 items-center justify-end">
-            <button className="hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl active:scale-[0.98] transition-all ease-linear duration-100">
+            <a
+              id="twitterButton"
+              href={twitterLink}
+              className="hover:bg-yellow-500/80 border border-[#9e782c] shadow-[2px_2px_0_#9e782c] active:shadow-[0.5px_0.5px_0_#9e782c] active:translate-x-[1px] active:translate-y-[1px] active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl active:scale-[0.99] transition-all ease-linear duration-100"
+            >
               <svg
                 width="43"
                 height="43"
@@ -237,8 +270,12 @@ export default function Header() {
                   </clipPath>
                 </defs>
               </svg>
-            </button>
-            <button className="hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl active:scale-[0.98] transition-all ease-linear duration-100">
+            </a>
+            <a
+              id="telegramButton"
+              href={telegramLink}
+              className="hover:bg-yellow-500/80 border active:scale-[0.99] border-[#9e782c] shadow-[2px_2px_0_#9e782c] active:shadow-[0.5px_0.5px_0_#9e782c] active:translate-x-[1px] active:translate-y-[1px] active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl transition-all ease-linear duration-100"
+            >
               <svg
                 width="43"
                 height="43"
@@ -251,8 +288,12 @@ export default function Header() {
                   fill="white"
                 />
               </svg>
-            </button>
-            <button className="hover:bg-yellow-500/80 items-center justify-center flex w-[43px] h-[43px] active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl active:scale-[0.98] transition-all ease-linear duration-100">
+            </a>
+            <a
+              id="instagramButton"
+              href={instagramLink}
+              className="hover:bg-yellow-500/80 w-[44px] h-[44px] active:scale-[0.99] flex items-center justify-center border border-[#9e782c] shadow-[2px_2px_0_#9e782c] active:shadow-[0.5px_0.5px_0_#9e782c] active:translate-x-[1px] active:translate-y-[1px] active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl transition-all ease-linear duration-100"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="26"
@@ -268,49 +309,63 @@ export default function Header() {
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
               </svg>
-            </button>
-            {/*<button className="hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl active:scale-[0.98] transition-all ease-linear duration-100">
-              <svg
-                width="43"
-                height="43"
-                viewBox="0 0 40 40"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+            </a>
+            {tokenCA && (
+              <a
+                id="dexscreenerButton"
+                href={`https://dexscreener.com/solana/${tokenCA}`}
+                className="hover:bg-yellow-500/80 active:scale-[0.99] border border-[#9e782c] shadow-[2px_2px_0_#9e782c] active:shadow-[0.5px_0.5px_0_#9e782c] active:translate-x-[1px] active:translate-y-[1px] active:bg-yellow-500/90 bg-yellow-500/70 rounded-xl transition-all ease-linear duration-100"
               >
-                <g clipPath="url(#clip0_76_47)">
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M21.6515 15.9055C22.4162 15.5242 23.3893 14.9628 24.3636 14.1937C24.569 14.6203 24.5915 14.9926 24.4856 15.2932C24.4106 15.505 24.2693 15.6893 24.0835 15.8358C23.8822 15.9943 23.6309 16.1096 23.3531 16.1719C22.8259 16.2907 22.2104 16.2213 21.6515 15.9055ZM21.7841 19.8127L22.7964 20.3974C20.7294 21.5559 20.1675 23.7071 19.5 25.8023C18.8326 23.7071 18.2706 21.5559 16.2036 20.3974L17.216 19.8127C17.3139 19.7757 17.3976 19.7086 17.4551 19.6211C17.5126 19.5336 17.5409 19.4302 17.536 19.3256C17.4432 17.3633 17.9731 16.4956 18.6877 15.9507C18.9441 15.7556 19.2239 15.6576 19.5 15.6576C19.7761 15.6576 20.0559 15.7556 20.3123 15.9507C21.027 16.4956 21.5568 17.3633 21.4641 19.3256C21.4591 19.4302 21.4875 19.5336 21.5449 19.6211C21.6024 19.7086 21.6861 19.7757 21.7841 19.8127ZM19.5 7C20.6701 7.03142 21.8432 7.25858 22.8613 7.7005C23.5663 8.00692 24.2241 8.41167 24.8198 8.89567C25.0888 9.11417 25.3103 9.32525 25.5543 9.56825C26.2124 9.591 27.1741 8.85992 27.6206 8.17583C26.8522 10.695 23.3457 13.6699 20.9181 14.8083C20.9171 14.8078 20.9165 14.8073 20.9157 14.8068C20.4801 14.4741 19.9901 14.3078 19.5 14.3078C19.0099 14.3078 18.52 14.4741 18.0843 14.8068C18.0836 14.8072 18.0829 14.8079 18.0819 14.8083C15.6542 13.6699 12.1478 10.695 11.3794 8.17583C11.8258 8.85992 12.7876 9.591 13.4456 9.56825C13.6897 9.32533 13.9112 9.11417 14.1801 8.89567C14.7758 8.41167 15.4336 8.00692 16.1386 7.7005C17.1568 7.25858 18.3299 7.03142 19.5 7ZM17.3485 15.9055C16.5838 15.5242 15.6106 14.9628 14.6365 14.1937C14.4311 14.6203 14.4086 14.9926 14.5143 15.2932C14.5894 15.505 14.7307 15.6893 14.9165 15.8358C15.1178 15.9943 15.3691 16.1096 15.647 16.1719C16.1741 16.2907 16.7896 16.2213 17.3485 15.9055Z"
-                    fill="white"
-                  />
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M25.4306 13.2513C25.9669 12.7101 26.4395 12.111 26.8195 11.5764L27.0125 11.9397C27.6338 13.1827 27.9567 14.4208 27.9567 15.8142L27.9553 18.0252L27.967 19.1713C28.012 21.9852 28.6208 24.8321 30 27.4374L27.1144 25.1106L25.0727 28.4238L22.9277 26.4046L19.5 31.967L16.0723 26.4047L13.9274 28.4239L11.8857 25.1107L9 27.4375C10.3792 24.8322 10.988 21.9853 11.0331 19.1714L11.0448 18.0252L11.0434 15.8142C11.0434 14.4208 11.3662 13.1827 11.9877 11.9397L12.1806 11.5765C12.5606 12.1111 13.0331 12.7101 13.5695 13.2514L13.402 13.5993C13.0766 14.2751 12.9688 15.0307 13.2223 15.7492C13.3858 16.2121 13.684 16.609 14.0685 16.912C14.4418 17.2062 14.8837 17.4046 15.3463 17.5087C15.6476 17.5766 15.9546 17.6045 16.2596 17.595C16.1884 17.9984 16.1573 18.4168 16.1553 18.8432L13.4333 20.4153L15.5338 21.5928C15.7017 21.6869 15.8615 21.7947 16.0117 21.9152C17.7434 23.47 18.7846 28.0698 19.5001 30.3165C20.2157 28.0698 21.2568 23.47 22.9886 21.9152C23.1387 21.7947 23.2985 21.6869 23.4664 21.5928L25.5669 20.4153L22.8448 18.8432C22.8428 18.4168 22.8117 17.9984 22.7406 17.595C23.0456 17.6045 23.3526 17.5766 23.6539 17.5087C24.1165 17.4046 24.5584 17.2062 24.9317 16.912C25.3161 16.609 25.6144 16.2121 25.7777 15.7492C26.0313 15.0307 25.9235 14.2752 25.5982 13.5993L25.4307 13.2514L25.4306 13.2513Z"
-                    fill="white"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_76_47">
-                    <rect
-                      width="21"
-                      height="25"
-                      fill="black"
-                      transform="translate(9 7)"
+                <svg
+                  width="43"
+                  height="43"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clipPath="url(#clip0_76_47)">
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M21.6515 15.9055C22.4162 15.5242 23.3893 14.9628 24.3636 14.1937C24.569 14.6203 24.5915 14.9926 24.4856 15.2932C24.4106 15.505 24.2693 15.6893 24.0835 15.8358C23.8822 15.9943 23.6309 16.1096 23.3531 16.1719C22.8259 16.2907 22.2104 16.2213 21.6515 15.9055ZM21.7841 19.8127L22.7964 20.3974C20.7294 21.5559 20.1675 23.7071 19.5 25.8023C18.8326 23.7071 18.2706 21.5559 16.2036 20.3974L17.216 19.8127C17.3139 19.7757 17.3976 19.7086 17.4551 19.6211C17.5126 19.5336 17.5409 19.4302 17.536 19.3256C17.4432 17.3633 17.9731 16.4956 18.6877 15.9507C18.9441 15.7556 19.2239 15.6576 19.5 15.6576C19.7761 15.6576 20.0559 15.7556 20.3123 15.9507C21.027 16.4956 21.5568 17.3633 21.4641 19.3256C21.4591 19.4302 21.4875 19.5336 21.5449 19.6211C21.6024 19.7086 21.6861 19.7757 21.7841 19.8127ZM19.5 7C20.6701 7.03142 21.8432 7.25858 22.8613 7.7005C23.5663 8.00692 24.2241 8.41167 24.8198 8.89567C25.0888 9.11417 25.3103 9.32525 25.5543 9.56825C26.2124 9.591 27.1741 8.85992 27.6206 8.17583C26.8522 10.695 23.3457 13.6699 20.9181 14.8083C20.9171 14.8078 20.9165 14.8073 20.9157 14.8068C20.4801 14.4741 19.9901 14.3078 19.5 14.3078C19.0099 14.3078 18.52 14.4741 18.0843 14.8068C18.0836 14.8072 18.0829 14.8079 18.0819 14.8083C15.6542 13.6699 12.1478 10.695 11.3794 8.17583C11.8258 8.85992 12.7876 9.591 13.4456 9.56825C13.6897 9.32533 13.9112 9.11417 14.1801 8.89567C14.7758 8.41167 15.4336 8.00692 16.1386 7.7005C17.1568 7.25858 18.3299 7.03142 19.5 7ZM17.3485 15.9055C16.5838 15.5242 15.6106 14.9628 14.6365 14.1937C14.4311 14.6203 14.4086 14.9926 14.5143 15.2932C14.5894 15.505 14.7307 15.6893 14.9165 15.8358C15.1178 15.9943 15.3691 16.1096 15.647 16.1719C16.1741 16.2907 16.7896 16.2213 17.3485 15.9055Z"
+                      fill="white"
                     />
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>*/}
-            <button className="font-semibold px-4 text-white active:scale-[0.98] transition-all ease-linear duration-100 hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 py-2.5 rounded-2xl">
-              Join now
-            </button>
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M25.4306 13.2513C25.9669 12.7101 26.4395 12.111 26.8195 11.5764L27.0125 11.9397C27.6338 13.1827 27.9567 14.4208 27.9567 15.8142L27.9553 18.0252L27.967 19.1713C28.012 21.9852 28.6208 24.8321 30 27.4374L27.1144 25.1106L25.0727 28.4238L22.9277 26.4046L19.5 31.967L16.0723 26.4047L13.9274 28.4239L11.8857 25.1107L9 27.4375C10.3792 24.8322 10.988 21.9853 11.0331 19.1714L11.0448 18.0252L11.0434 15.8142C11.0434 14.4208 11.3662 13.1827 11.9877 11.9397L12.1806 11.5765C12.5606 12.1111 13.0331 12.7101 13.5695 13.2514L13.402 13.5993C13.0766 14.2751 12.9688 15.0307 13.2223 15.7492C13.3858 16.2121 13.684 16.609 14.0685 16.912C14.4418 17.2062 14.8837 17.4046 15.3463 17.5087C15.6476 17.5766 15.9546 17.6045 16.2596 17.595C16.1884 17.9984 16.1573 18.4168 16.1553 18.8432L13.4333 20.4153L15.5338 21.5928C15.7017 21.6869 15.8615 21.7947 16.0117 21.9152C17.7434 23.47 18.7846 28.0698 19.5001 30.3165C20.2157 28.0698 21.2568 23.47 22.9886 21.9152C23.1387 21.7947 23.2985 21.6869 23.4664 21.5928L25.5669 20.4153L22.8448 18.8432C22.8428 18.4168 22.8117 17.9984 22.7406 17.595C23.0456 17.6045 23.3526 17.5766 23.6539 17.5087C24.1165 17.4046 24.5584 17.2062 24.9317 16.912C25.3161 16.609 25.6144 16.2121 25.7777 15.7492C26.0313 15.0307 25.9235 14.2752 25.5982 13.5993L25.4307 13.2514L25.4306 13.2513Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_76_47">
+                      <rect
+                        width="21"
+                        height="25"
+                        fill="black"
+                        transform="translate(9 7)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            )}
+            {config.homeMainSection.buttons.map(
+              (button: any, index: number) => (
+                <a
+                  key={index}
+                  href={button.href || "about:blank"}
+                  className="font-semibold px-4 border border-[#9e782c] shadow-[2px_2px_0_#9e782c] active:shadow-[0.5px_0.5px_0_#9e782c] active:translate-x-[1px] active:translate-y-[1px] text-white active:scale-[0.99] transition-all ease-linear duration-100 hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 py-[8.95px] rounded-xl"
+                >
+                  {button.text}
+                </a>
+              )
+            )}
           </div>
         </header>
         {/* Red slider for lg devices */}
         <nav className="h-[40px] mt-[68px] w-full hidden lg:flex text-white border-b-2 border-zinc-800 font-medium items-center justify-center bg-red-500">
-          <TextScroller text={sliderText} />
+          <TextScroller />
         </nav>
       </motion.div>
     </>

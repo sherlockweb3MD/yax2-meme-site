@@ -1,34 +1,9 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import config from "@/config";
 
-const phases = [
-  {
-    items: [
-      "Launch the telegram",
-      "Publish the website",
-      "Build a strong community",
-    ],
-  },
-  {
-    items: [
-      "Launch on pump.fun",
-      "Airdrop for early members",
-      "Launch Pekky the Duck game",
-    ],
-  },
-  {
-    items: ["CoinGecko and CMC Listing", "Hire crypto influencers"],
-  },
-  {
-    items: [
-      "Establish DAO's for token's future",
-      "Insure long-term sustainability",
-    ],
-  },
-];
-
-export default function Roadmap() {
+export default function RoadmapPage() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -36,16 +11,20 @@ export default function Roadmap() {
       transition={{ duration: 0.3 }}
     >
       <div className="flex flex-col mt-[108px] lg:mt-0 max-w-[100vw] overflow-hidden justify-center items-center min-h-[calc(100vh-108px)]">
-        <section className="w-full flex mt-[64px] md:mt-[100px] flex-row items-center justify-center px-5 md:px-8 lg:px-12 xl:px-16">
+        <section className="w-full flex mt-[58px] md:mt-[35px] flex-row items-center justify-center px-5 md:px-8 lg:px-12 xl:px-16">
           <div className="flex flex-col text-center items-center justify-start">
             <h1 className="font-bold text-[32px] lg:text-[36px] xl:text-[40px]">
-              OUR ROADMAP
+              {config.roadmapPage.title}
             </h1>
             <h2 className="font-medium leading-7 text-lg xl:text-xl">
-              This roadmap outlines our journey to exciting milestones,
-              <br /> including listings on major exchanges. Let's pave the way
-              for
-              <br /> innovative developments.
+              {config.roadmapPage.description
+                .split("\n")
+                .map((line: any, index: any) => (
+                  <React.Fragment key={index}>
+                    {line}
+                    <br />
+                  </React.Fragment>
+                ))}
             </h2>
           </div>
         </section>
@@ -60,7 +39,7 @@ export default function Roadmap() {
                   Phase&nbsp;
                   <h2 className="text-xl font-bold tracking-normal">#1</h2>
                 </div>
-                {phases[0].items.map((text: string) => (
+                {config.roadmapPage.phases[0].items.map((text: string) => (
                   <div
                     key={text + Math.random() * 100}
                     className="flex flex-row tracking-tight mt-1 items-center text-center justify-start"
@@ -80,7 +59,7 @@ export default function Roadmap() {
                   Phase&nbsp;
                   <h2 className="text-xl font-bold tracking-normal">#2</h2>
                 </div>
-                {phases[1].items.map((text: string) => (
+                {config.roadmapPage.phases[1].items.map((text: string) => (
                   <div
                     key={text + Math.random() * 100}
                     className="flex flex-row tracking-tight mt-1 items-center text-center justify-start"
@@ -100,7 +79,7 @@ export default function Roadmap() {
                   Phase&nbsp;
                   <h2 className="text-xl font-bold tracking-normal">#3</h2>
                 </div>
-                {phases[2].items.map((text: string) => (
+                {config.roadmapPage.phases[2].items.map((text: string) => (
                   <div
                     key={text + Math.random() * 100}
                     className="flex flex-row tracking-tight mt-1 items-center text-center justify-start"
@@ -120,7 +99,7 @@ export default function Roadmap() {
                   Phase&nbsp;
                   <h2 className="text-xl font-bold tracking-normal">#4</h2>
                 </div>
-                {phases[3].items.map((text: string) => (
+                {config.roadmapPage.phases[3].items.map((text: string) => (
                   <div
                     key={text + Math.random() * 100}
                     className="flex flex-row tracking-tight mt-1 items-center text-center justify-start"
@@ -175,7 +154,7 @@ export default function Roadmap() {
                 Phase&nbsp;
                 <h2 className="text-xl font-bold tracking-normal">#1</h2>
               </div>
-              {phases[0].items.map((text: string) => (
+              {config.roadmapPage.phases[0].items.map((text: string) => (
                 <div
                   key={text + Math.random() * 100}
                   className="flex flex-row mt-1 items-center text-center justify-start"
@@ -194,7 +173,7 @@ export default function Roadmap() {
                 Phase&nbsp;
                 <h2 className="text-xl font-bold tracking-normal">#3</h2>
               </div>
-              {phases[2].items.map((text: string) => (
+              {config.roadmapPage.phases[2].items.map((text: string) => (
                 <div
                   key={text + Math.random() * 100}
                   className="flex flex-row mt-1 items-center text-center justify-start"
@@ -216,7 +195,7 @@ export default function Roadmap() {
                 Phase&nbsp;
                 <h2 className="text-xl font-bold tracking-normal">#2</h2>
               </div>
-              {phases[1].items.map((text: string) => (
+              {config.roadmapPage.phases[1].items.map((text: string) => (
                 <div
                   key={text + Math.random() * 100}
                   className="flex flex-row mt-1 items-center text-center justify-start"
@@ -235,7 +214,7 @@ export default function Roadmap() {
                 Phase&nbsp;
                 <h2 className="text-xl font-bold tracking-normal">#4</h2>
               </div>
-              {phases[3].items.map((text: string) => (
+              {config.roadmapPage.phases[3].items.map((text: string) => (
                 <div
                   key={text + Math.random() * 100}
                   className="flex flex-row mt-1 items-center text-center justify-start"

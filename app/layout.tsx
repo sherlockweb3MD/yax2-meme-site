@@ -4,6 +4,7 @@ import { Grandstander } from "next/font/google";
 import Header from "@/components/header";
 import "./globals.css";
 import { motion } from "framer-motion";
+import { Toaster } from "react-hot-toast";
 
 const grandstander = Grandstander({ subsets: ["latin"] });
 
@@ -63,6 +64,12 @@ export default function RootLayout({
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3 }}
         >
+          <Toaster
+            toastOptions={{
+              className: "!z-[9999] !bg-[#fefce8] !border !border-[#fafaf2]",
+            }}
+            containerClassName="md:mt-14 mt-24"
+          />
           <Header />
           {children}
         </motion.div>

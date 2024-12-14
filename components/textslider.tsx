@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { animated, useSpring } from "react-spring";
+import config from "@/config";
 
-export default function TextScroller({ text }: { text: string }) {
-  const repeatedText = Array(255).fill(text).join(" —  ");
+export default function TextScroller() {
+  const repeatedText = Array(255).fill(config.redLineText).join(" — ");
   const [key, setKey] = useState(1);
   const scrolling = useSpring({
     from: { transform: "translate(-100%, 0)" },
