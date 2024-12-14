@@ -12,7 +12,7 @@ export const telegramLink = `https://pekkycoin.t.me?utm_source=${mainLink}`; // 
 export const twitterLink = `https://x.com/pekky_sol?utm_source=${mainLink}`; // Twitter
 
 // Token Info
-export const tokenCA = "ta"; // Token contract
+export const tokenCA = ""; // Token contract
 
 // Page contents
 export default {
