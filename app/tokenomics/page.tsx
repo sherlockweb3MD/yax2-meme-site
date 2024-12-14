@@ -67,7 +67,7 @@ export default function TokenomicsPage() {
             <div className="flex flex-row items-center justify-center space-x-2">
               <div className="bg-[#69e0fe] border border-zinc-900/15 active:scale-[0.98] transition-all ease-linear duration-100 rounded-full w-5 h-5" />
               <span className="font-semibold text-lg mt-1">
-                {"->"} Dev Holdings
+                {"->"} Dev Holdings (Locked)
               </span>
             </div>
           </div>

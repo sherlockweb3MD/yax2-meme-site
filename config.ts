@@ -26,7 +26,7 @@ export default {
       {
         text: tokenCA ? "Buy now" : "Join now",
         href: tokenCA
-          ? `https://dexscreener.com/solana/${tokenCA}`
+          ? `https://jup.ag/SOL-${tokenCA}`
           : telegramLink,
       },
     ],
