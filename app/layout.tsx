@@ -35,22 +35,31 @@ export default function RootLayout({
         <meta property="og:title" content="$PEKKY" />
         <meta
           property="og:description"
-          content="A brief description of your website for social media sharing"
+          content="$PEKKY is a funny cartoon duck mascot. Join the community now and dive into the meme magic!"
         />
-        <meta property="og:image" content="URL-to-an-image.jpg" />
-        <meta property="og:url" content="https://pekk-yweb-site.vercel.app" />
+        <meta
+          property="og:image"
+          content="https://pekk-yweb-site.vercel.app/pekky.png"
+        />
+        <meta
+          property="og:url"
+          content="https://pekk-yweb-site.vercel.app/pekky.png"
+        />
         {/* Twitter card meta tags */}
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="" />
         <meta name="twitter:title" content="$PEKKY" />
         <meta
           name="twitter:description"
           content="$PEKKY is a funny cartoon duck mascot. Join the community now and dive into the meme magic!"
         />
-        <meta name="twitter:image" content="URL-to-an-image.jpg" />
+        <meta
+          name="twitter:image"
+          content="https://pekk-yweb-site.vercel.app/pekky.png"
+        />
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
         {/* Theme color */}
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#fafaf2" />
         <title>$PEKKY - Dive into the meme magic!</title>
       </head>
       <body
