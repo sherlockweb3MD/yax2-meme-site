@@ -1,5 +1,5 @@
 /*
- * $PEKKY Website Config File
+ * $PENGU Website Config File
  */
 
 // Main link (you must change on deploy with your domain name e.g. 'https://pekkycoin.com')
@@ -12,16 +12,16 @@ export const telegramLink = `https://pekkycoin.t.me?utm_source=${mainLink}`; // 
 export const twitterLink = `https://x.com/pekky_sol?utm_source=${mainLink}`; // Twitter
 
 // Token Info
-export const tokenCA = ""; // Token contract
+export const tokenCA = "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"; // Token contract
 
 // Page contents
 export default {
-  redLineText: "$PEKKY To The Moon!", // Red bar's text in top of the page
+  redLineText: "$PENGU To The Moon!", // Red bar's text in top of the page
   // Main route (/)
   homeMainSection: {
-    title: "$PEKKY to the Moon",
+    title: "$PENGU to the Moon",
     description:
-      "$PEKKY is a funny cartoon duck mascot. Join the community now and dive into the meme magic!", // The \n component breaks lines if you want to add, you can.
+      "$PENGU is a funny cartoon duck mascot. Join the community now and dive into the meme magic!", // The \n component breaks lines if you want to add, you can.
     buttons: [
       {
         text: tokenCA ? "Buy now" : "Join now",
@@ -34,7 +34,7 @@ export default {
   // Tokenomics route (/tokenomics)
   tokenomicsPage: {
     title: "TOKENOMICS",
-    description: "$PEKKY Tokenomics",
+    description: "$PENGU Tokenomics",
   },
   // Tokenomics route (/roadmap)
   roadmapPage: {
@@ -54,7 +54,7 @@ export default {
         items: [
           "Launch on pump.fun",
           "Airdrop for early members",
-          "Launch Pekky the Duck game",
+          "Launch Pengu the Duck game",
         ],
       },
       // Phase 3

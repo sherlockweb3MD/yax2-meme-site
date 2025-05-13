@@ -23,19 +23,19 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
         <meta
           name="description"
-          content="$PEKKY is a funny cartoon duck mascot. Join the community now and dive into the meme magic!"
+          content="$PENGU is a funny cartoon duck mascot. Join the community now and dive into the meme magic!"
         />
         <meta
           name="keywords"
           content="duck, funny, crypto, pumpfun, raydium, memecoin, telegram mini app, telegram app, duck app, pekky, pekkycoin"
         />
-        <meta name="author" content="$PEKKY" />
+        <meta name="author" content="$PENGU" />
         {/* Open Graph meta tags for social sharing */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="$PEKKY" />
+        <meta property="og:title" content="$PENGU" />
         <meta
           property="og:description"
-          content="$PEKKY is a funny cartoon duck mascot. Join the community now and dive into the meme magic!"
+          content="$PENGU is a funny cartoon duck mascot. Join the community now and dive into the meme magic!"
         />
         <meta
           property="og:image"
@@ -47,10 +47,10 @@ export default function RootLayout({
         />
         {/* Twitter card meta tags */}
         <meta name="twitter:card" content="" />
-        <meta name="twitter:title" content="$PEKKY" />
+        <meta name="twitter:title" content="$PENGU" />
         <meta
           name="twitter:description"
-          content="$PEKKY is a funny cartoon duck mascot. Join the community now and dive into the meme magic!"
+          content="$PENGU is a funny cartoon duck mascot. Join the community now and dive into the meme magic!"
         />
         <meta
           name="twitter:image"
@@ -60,7 +60,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         {/* Theme color */}
         <meta name="theme-color" content="#fafaf2" />
-        <title>$PEKKY - Dive into the meme magic!</title>
+        <title>$PENGU - Dive into the meme magic!</title>
       </head>
       <body
         className={

@@ -16,13 +16,12 @@ export default function HomePage() {
       transition={{ duration: 0.3 }}
     >
       <main className="flex flex-col max-w-[100vw] w-screen overflow-y-auto mt-[96px] lg:mt-0 overflow-x-hidden justify-center items-center h-full">
-        <section className="w-full flex mb-5 lg:mb-0 lg:mt-0 flex-col lg:flex-row items-center justify-start lg:justify-between lg:px-[111px] px-5 xl:px-[190px] min-h-[calc(100vh-108px)]">
-          <div className="lg:hidden flex mt-[52px] flex-col items-center justify-center">
+<section className="w-full flex mb-5 lg:mb-0 lg:mt-0 flex-col lg:flex-row items-center justify-start lg:justify-between lg:px-[111px] px-5 xl:px-[190px] min-h-[50vh] lg:min-h-[70vh] xl:min-h-[calc(100vh-108px)]">          <div className="lg:hidden flex mt-[52px] flex-col items-center justify-center">
             <img
               onClick={() => playDuckSound()}
               draggable="false"
               className="rounded-3xl active:opacity-[98%] active:scale-[0.95] transition-all ease-linear duration-100 cursor-pointer size-[220px]"
-              src="https://pekk-yweb-site.vercel.app/pekky.svg"
+              src="https://pekky.xyz/pekky.svg"
             />
           </div>
           <div className="flex flex-col mt-[52px] md:ml-9 lg:mt-0 text-start items-start justify-center">
@@ -58,7 +57,7 @@ export default function HomePage() {
               onClick={() => playDuckSound()}
               draggable="false"
               className="rounded-3xl active:opacity-[98%] size-[290px] active:scale-[0.95] transition-all ease-linear duration-100 cursor-pointer"
-              src="https://pekk-yweb-site.vercel.app/pekky.svg"
+              src="https://pekky.xyz/pekky.svg"
             />
           </div>
         </section>
@@ -66,8 +65,10 @@ export default function HomePage() {
           <section className="w-full flex mb-5 lg:mb-0 lg:mt-0 border-t border-zinc-200 flex-col lg:flex-row items-center justify-between lg:px-[111px] px-5 xl:px-[190px]">
             <div className="flex my-36 xl:mx-9 w-full flex-col items-center justify-center">
               <div className="font-semibold flex flex-row items-center justify-center text-center space-x-5 relative px-6 border border-[#9e782c] shadow-[1px_1px_0_#9e782c] transition-all ease-linear duration-100 bg-yellow-50 text-black text-[17px] py-3 rounded-xl">
-                <span>Contract Address</span>
+                <span>Contract Address: {tokenCA}</span>
+                
                 <a
+                
                   onClick={() => {
                     navigator.clipboard
                       .writeText(tokenCA)
@@ -80,6 +81,7 @@ export default function HomePage() {
                   }}
                   className="font-semibold cursor-pointer px-4 uppercase border border-[#9e782c] shadow-[2px_2px_0_#9e782c] active:shadow-[0.5px_0.5px_0_#9e782c] active:translate-x-[1px] active:translate-y-[1px] text-white active:scale-[0.99] transition-all ease-linear duration-100 hover:bg-yellow-500/80 active:bg-yellow-500/90 bg-yellow-500/70 text-[17px] py-2 rounded-xl"
                 >
+                  
                   COPY
                 </a>
               </div>
