@@ -34,8 +34,8 @@ export default function RoadmapPage() {
 
         {/* Roadmap Timeline */}
         <div className="relative">
-          {/* Vertical Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-yellow-200" />
+          {/* Vertical Line - Hidden on mobile */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-yellow-200" />
 
           {/* Phases */}
           <div className="space-y-16">
@@ -45,23 +45,17 @@ export default function RoadmapPage() {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: index * 0.2 }}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                }`}
+                className="relative"
               >
-                {/* Phase Icon */}
+                {/* Phase Icon - Centered on mobile, offset on desktop */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
                   <div className="bg-white p-4 rounded-full border-4 border-yellow-200 shadow-lg">
                     <phase.icon className="text-2xl text-yellow-500" />
                   </div>
                 </div>
 
-                {/* Phase Content */}
-                <div
-                  className={`w-1/2 ${
-                    index % 2 === 0 ? "pr-12 text-right" : "pl-12"
-                  }`}
-                >
+                {/* Phase Content - Full width on mobile, half width on desktop */}
+                <div className="md:w-1/2 md:ml-auto md:pl-12 md:pr-0 px-4 pt-12 md:pt-0">
                   <div className="bg-white rounded-2xl p-6 border-2 border-yellow-200 shadow-lg hover:shadow-xl transition-shadow">
                     <h3 className="text-xl font-bold text-gray-800 mb-4">
                       Phase {index + 1}
@@ -70,7 +64,7 @@ export default function RoadmapPage() {
                       {phase.items.map((item, itemIndex) => (
                         <motion.li
                           key={itemIndex}
-                          initial={{ x: index % 2 === 0 ? 20 : -20, opacity: 0 }}
+                          initial={{ x: 20, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
                           transition={{ delay: index * 0.2 + itemIndex * 0.1 }}
                           className="flex items-center space-x-2 text-gray-600"
@@ -92,7 +86,7 @@ export default function RoadmapPage() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="mt-16 text-center"
+          className="mt-16 text-center px-4"
         >
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
             Join Our Journey
