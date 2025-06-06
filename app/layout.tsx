@@ -3,8 +3,9 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import { config } from "./config";
-import { motion } from "framer-motion";
-import { FaTelegram, FaTwitter, FaInstagram } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaTelegram, FaTwitter, FaInstagram, FaBars, FaTimes } from "react-icons/fa";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +14,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <html lang="en">
       <head>
@@ -77,6 +80,7 @@ export default function RootLayout({
                 </a>
               </div>
               
+              {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-8">
                 <a href="/" className="text-gray-600 hover:text-yellow-500 transition-colors">
                   Home
@@ -114,8 +118,83 @@ export default function RootLayout({
                   </a>
                 </div>
               </div>
+
+              {/* Mobile Menu Button */}
+              <button
+                className="md:hidden p-2 rounded-lg hover:bg-yellow-50 transition-colors"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                {isMobileMenuOpen ? (
+                  <FaTimes className="h-6 w-6 text-gray-600" />
+                ) : (
+                  <FaBars className="h-6 w-6 text-gray-600" />
+                )}
+              </button>
             </div>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.2 }}
+                className="md:hidden bg-white border-b border-yellow-100"
+              >
+                <div className="px-4 py-4 space-y-4">
+                  <a
+                    href="/"
+                    className="block text-gray-600 hover:text-yellow-500 transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Home
+                  </a>
+                  <a
+                    href="/tokenomics"
+                    className="block text-gray-600 hover:text-yellow-500 transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Tokenomics
+                  </a>
+                  <a
+                    href="/roadmap"
+                    className="block text-gray-600 hover:text-yellow-500 transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Roadmap
+                  </a>
+                  <div className="flex items-center space-x-4 pt-2">
+                    <a
+                      href={config.telegramLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-[#0088cc] transition-colors"
+                    >
+                      <FaTelegram size={20} />
+                    </a>
+                    <a
+                      href={config.twitterLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-black transition-colors"
+                    >
+                      <FaTwitter size={20} />
+                    </a>
+                    <a
+                      href={config.instagramLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-pink-600 transition-colors"
+                    >
+                      <FaInstagram size={20} />
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </nav>
 
         {/* Main Content */}
