@@ -1,5 +1,6 @@
 export const config = {
   redLineText: "PENGU IS THE NEXT 100X GEM",
+  tokenCA: "YOUR_TOKEN_ADDRESS",
   homeMainSection: {
     title: "PENGU",
     description: "The most pengu token on Solana",

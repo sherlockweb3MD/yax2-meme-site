@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import config from "@/config";
+import { config } from "../config";
 
 export default function TokenomicsPage() {
   const tokenomicsData = [

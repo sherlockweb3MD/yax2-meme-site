@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import config, { tokenCA, telegramLink, twitterLink } from "@/config";
+import { config } from "./config";
 import toast from "react-hot-toast";
 import { FaCopy, FaTelegram, FaTwitter, FaChartLine } from "react-icons/fa";
 
@@ -133,7 +133,7 @@ export default function HomePage() {
               Dexscreener is currently blocked. Please visit the chart directly:
             </p>
             <a
-              href={`https://dexscreener.com/solana/${tokenCA}`}
+              href={`https://dexscreener.com/solana/${config.tokenCA}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 border-2 border-yellow-500 text-white bg-yellow-500 rounded-xl hover:bg-yellow-600 transition-colors shadow-lg hover:shadow-xl"
@@ -145,7 +145,7 @@ export default function HomePage() {
         </section>
 
         {/* Contract Address Section */}
-        {tokenCA && (
+        {config.tokenCA && (
           <section className="w-full py-16 bg-gradient-to-b from-white to-yellow-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div 
@@ -155,11 +155,11 @@ export default function HomePage() {
               >
                 <h2 className="text-2xl font-bold text-gray-800 mb-6">Contract Address</h2>
                 <div className="flex items-center space-x-4 bg-white p-4 rounded-xl border-2 border-yellow-200 shadow-lg">
-                  <code className="text-gray-700 font-mono">{tokenCA}</code>
+                  <code className="text-gray-700 font-mono">{config.tokenCA}</code>
                   <button
                     onClick={() => {
                       navigator.clipboard
-                        .writeText(tokenCA)
+                        .writeText(config.tokenCA)
                         .then(() => {
                           toast.success("Copied to clipboard!");
                         })
@@ -174,7 +174,7 @@ export default function HomePage() {
                 </div>
                 <div className="mt-8 flex space-x-4">
                   <a
-                    href={telegramLink}
+                    href={config.telegramLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 bg-[#0088cc] text-white rounded-xl hover:bg-[#0077b3] transition-colors"
@@ -182,7 +182,7 @@ export default function HomePage() {
                     <FaTelegram size={24} />
                   </a>
                   <a
-                    href={twitterLink}
+                    href={config.twitterLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 bg-black text-white rounded-xl hover:bg-gray-800 transition-colors"

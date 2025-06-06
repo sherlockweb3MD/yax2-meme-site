@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import config from "@/config";
-import { FaRocket, FaUsers, FaGamepad, FaExchangeAlt, FaChartLine } from "react-icons/fa";
+import { FaRocket, FaUsers, FaGamepad, FaExchangeAlt, FaChartLine, FaTelegram } from "react-icons/fa";
+import { config } from "../config";
 
 export default function RoadmapPage() {
   const phases = config.roadmapPage.phases.map((phase, index) => ({
@@ -108,7 +108,7 @@ export default function RoadmapPage() {
             className="inline-flex items-center px-6 py-3 border-2 border-yellow-500 text-white bg-yellow-500 rounded-xl hover:bg-yellow-600 transition-colors shadow-lg hover:shadow-xl"
           >
             Join Our Community
-            <FaUsers className="ml-2" />
+            <FaTelegram className="ml-2" />
           </a>
         </motion.div>
       </div>
