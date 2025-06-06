@@ -2,233 +2,115 @@
 import React from "react";
 import { motion } from "framer-motion";
 import config from "@/config";
+import { FaRocket, FaUsers, FaGamepad, FaExchangeAlt, FaChartLine } from "react-icons/fa";
 
 export default function RoadmapPage() {
+  const phases = config.roadmapPage.phases.map((phase, index) => ({
+    ...phase,
+    icon: [FaRocket, FaUsers, FaGamepad, FaExchangeAlt][index],
+  }));
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
+      className="pt-24 pb-16"
     >
-      <div className="flex flex-col mt-[108px] lg:mt-0 max-w-[100vw] overflow-hidden justify-center items-center min-h-[calc(100vh-108px)]">
-        <section className="w-full flex mt-[58px] md:mt-[36px] flex-row items-center justify-center px-5 md:px-8 lg:px-12 xl:px-16">
-          <div className="flex flex-col text-center items-center justify-start">
-            <h1 className="font-bold text-[32px] lg:text-[36px] xl:text-[40px]">
-              {config.roadmapPage.title}
-            </h1>
-            <h2 className="font-medium md:max-w-[600px] leading-7 text-lg xl:text-xl">
-              {config.roadmapPage.description
-                .split("\n")
-                .map((line: any, index: any) => (
-                  <React.Fragment key={index}>
-                    {line}
-                    <br />
-                  </React.Fragment>
-                ))}
-            </h2>
-          </div>
-        </section>
-        {/* Mobile phases */}
-        <section className="mt-8 left-0 flex flex-row items-start justify-start md:hidden">
-          <ol className="relative left-0 border-s-2 w-full border-[#f6f3c9]">
-            <li className="mb-6 ms-5 w-full">
-              <span className="absolute flex mt-1 items-center justify-center w-5 h-5 bg-[#e9df57] rounded-full -start-[11px] ring-[7px] ring-[#f9f5cc]"></span>
-              {/* Phase */}
-              <div className="bg-[#f6f3c9] ml-1 z-10 text-start border border-[#efe99b] p-[19px] w-[326px] h-auto rounded-2xl">
-                <div className="tracking-[-0.020em] flex flex-row items-center text-[20px] font-semibold">
-                  Phase&nbsp;
-                  <h2 className="text-xl font-bold tracking-normal">#1</h2>
-                </div>
-                {config.roadmapPage.phases[0].items.map((text: string) => (
-                  <div
-                    key={text + Math.random() * 100}
-                    className="flex flex-row tracking-tight mt-1 items-center text-center justify-start"
-                  >
-                    <span className="size-2 bg-zinc-800 rounded-full" />
-                    &nbsp;
-                    <span className="font-medium text-[18px]">{text}</span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header Section */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent mb-4">
+            {config.roadmapPage.title}
+          </h1>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            {config.roadmapPage.description}
+          </p>
+        </motion.div>
+
+        {/* Roadmap Timeline */}
+        <div className="relative">
+          {/* Vertical Line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-yellow-200" />
+
+          {/* Phases */}
+          <div className="space-y-16">
+            {phases.map((phase, index) => (
+              <motion.div
+                key={index}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: index * 0.2 }}
+                className={`relative flex items-center ${
+                  index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                }`}
+              >
+                {/* Phase Icon */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                  <div className="bg-white p-4 rounded-full border-4 border-yellow-200 shadow-lg">
+                    <phase.icon className="text-2xl text-yellow-500" />
                   </div>
-                ))}
-              </div>
-            </li>
-            <li className="mb-6 ms-5 w-full">
-              <span className="absolute flex mt-1 items-center justify-center w-5 h-5 bg-[#e9df57] rounded-full -start-[11px] ring-[7px] ring-[#f9f5cc]"></span>
-              {/* Phase */}
-              <div className="bg-[#f6f3c9] ml-1 z-10 text-start border border-[#efe99b] p-[19px] w-[326px] h-auto rounded-2xl">
-                <div className="tracking-[-0.020em] flex flex-row items-center text-[20px] font-semibold">
-                  Phase&nbsp;
-                  <h2 className="text-xl font-bold tracking-normal">#2</h2>
                 </div>
-                {config.roadmapPage.phases[1].items.map((text: string) => (
-                  <div
-                    key={text + Math.random() * 100}
-                    className="flex flex-row tracking-tight mt-1 items-center text-center justify-start"
-                  >
-                    <span className="size-2 bg-zinc-800 rounded-full" />
-                    &nbsp;
-                    <span className="font-medium text-[18px]">{text}</span>
+
+                {/* Phase Content */}
+                <div
+                  className={`w-1/2 ${
+                    index % 2 === 0 ? "pr-12 text-right" : "pl-12"
+                  }`}
+                >
+                  <div className="bg-white rounded-2xl p-6 border-2 border-yellow-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <h3 className="text-xl font-bold text-gray-800 mb-4">
+                      Phase {index + 1}
+                    </h3>
+                    <ul className="space-y-3">
+                      {phase.items.map((item, itemIndex) => (
+                        <motion.li
+                          key={itemIndex}
+                          initial={{ x: index % 2 === 0 ? 20 : -20, opacity: 0 }}
+                          animate={{ x: 0, opacity: 1 }}
+                          transition={{ delay: index * 0.2 + itemIndex * 0.1 }}
+                          className="flex items-center space-x-2 text-gray-600"
+                        >
+                          <span className="text-yellow-500">•</span>
+                          <span>{item}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
                   </div>
-                ))}
-              </div>
-            </li>
-            <li className="mb-6 ms-5 w-full">
-              <span className="absolute flex mt-1 items-center justify-center w-5 h-5 bg-[#e9df57] rounded-full -start-[11px] ring-[7px] ring-[#f9f5cc]"></span>
-              {/* Phase */}
-              <div className="bg-[#f6f3c9] ml-1 z-10 text-start border border-[#efe99b] p-[19px] w-[326px] h-auto rounded-2xl">
-                <div className="tracking-[-0.020em] flex flex-row items-center text-[20px] font-semibold">
-                  Phase&nbsp;
-                  <h2 className="text-xl font-bold tracking-normal">#3</h2>
                 </div>
-                {config.roadmapPage.phases[2].items.map((text: string) => (
-                  <div
-                    key={text + Math.random() * 100}
-                    className="flex flex-row tracking-tight mt-1 items-center text-center justify-start"
-                  >
-                    <span className="size-2 bg-zinc-800 rounded-full" />
-                    &nbsp;
-                    <span className="font-medium text-[18px]">{text}</span>
-                  </div>
-                ))}
-              </div>
-            </li>
-            <li className="mb-6 ms-5 w-full">
-              <span className="absolute flex mt-1 items-center justify-center w-5 h-5 bg-[#e9df57] rounded-full -start-[11px] ring-[7px] ring-[#f9f5cc]"></span>
-              {/* Phase */}
-              <div className="bg-[#f6f3c9] ml-1 z-10 text-start border border-[#efe99b] p-[19px] w-[326px] h-auto rounded-2xl">
-                <div className="tracking-[-0.020em] flex flex-row items-center text-[20px] font-semibold">
-                  Phase&nbsp;
-                  <h2 className="text-xl font-bold tracking-normal">#4</h2>
-                </div>
-                {config.roadmapPage.phases[3].items.map((text: string) => (
-                  <div
-                    key={text + Math.random() * 100}
-                    className="flex flex-row tracking-tight mt-1 items-center text-center justify-start"
-                  >
-                    <span className="size-2 bg-zinc-800 rounded-full" />
-                    &nbsp;
-                    <span className="font-medium text-[18px]">{text}</span>
-                  </div>
-                ))}
-              </div>
-            </li>
-          </ol>
-        </section>
-        <section className="hidden md:flex mb-10 md:flex-row flex-col w-full gap-[96px] relative items-start justify-start text-center max-w-[797px] h-full mt-8 lg:mt-10">
-          <div className="h-full min-h-full w-[7px] md:left-1/2 left-[5%] transform -translate-x-1/2 top-0 bg-gradient-to-b from-[#dad49c] z-10 rounded-xl to-[#c9c03e] absolute" />
-          {/* Phase balls */}
-          <div className="md:left-1/2 left-[5%] transform z-50 absolute -translate-x-1/2">
-            {/* Phase 1 ball */}
-            <div className="mt-[24px] relative">
-              <div className="bg-[#f9f5cc] flex items-center justify-center rounded-full size-7">
-                <div className="bg-[#e9df57] rounded-full size-5"></div>
-              </div>
-              <div className="w-full min-w-[32px] md:min-w-[36px] h-px border border-dashed border-[#e9df57] md:-translate-x-[100%] translate-x-[85%] absolute top-1/2 transform -translate-y-1/2"></div>
-            </div>
-            {/* Phase 2 ball */}
-            <div className="mt-[124px] relative">
-              <div className="bg-[#f9f5cc] flex items-center justify-center rounded-full size-7">
-                <div className="bg-[#e9df57] rounded-full size-5"></div>
-              </div>
-              <div className="w-full min-w-[32px] h-px border border-dashed border-[#e9df57] translate-x-[85%] absolute top-1/2 transform -translate-y-1/2"></div>
-            </div>
-            {/* Phase 3 ball */}
-            <div className="mt-[124px] relative">
-              <div className="bg-[#f9f5cc] flex items-center justify-center rounded-full size-7">
-                <div className="bg-[#e9df57] rounded-full size-5"></div>
-              </div>
-              <div className="w-full min-w-[36px] h-px border border-dashed border-[#e9df57] -translate-x-[100%] absolute top-1/2 transform -translate-y-1/2"></div>
-            </div>
-            {/* Phase 4 ball */}
-            <div className="mt-[124px] relative">
-              <div className="bg-[#f9f5cc] flex items-center justify-center rounded-full size-7">
-                <div className="bg-[#e9df57] rounded-full size-5"></div>
-              </div>
-              <div className="w-full min-w-[32px] h-px border border-dashed border-[#e9df57] translate-x-[85%] absolute top-1/2 transform -translate-y-1/2"></div>
-            </div>
+              </motion.div>
+            ))}
           </div>
-          {/* Left side */}
-          <div className="left-[5%] md:left-0 mt-0 pl-[6px] flex flex-col">
-            {/* Phase 1 */}
-            <div className="bg-[#f6f3c9] z-10 text-start border border-[#efe99b] p-[19px] w-full md:w-[343px] h-auto rounded-2xl">
-              <div className="tracking-[-0.020em] flex flex-row items-center text-[20px] font-semibold">
-                Phase&nbsp;
-                <h2 className="text-xl font-bold tracking-normal">#1</h2>
-              </div>
-              {config.roadmapPage.phases[0].items.map((text: string) => (
-                <div
-                  key={text + Math.random() * 100}
-                  className="flex flex-row mt-1 items-center text-center justify-start"
-                >
-                  <span className="size-2 bg-zinc-800 rounded-full" />
-                  &nbsp;
-                  <span className="font-medium tracking-tight text-[18px]">
-                    {text}
-                  </span>
-                </div>
-              ))}
-            </div>
-            {/* Phase 3 */}
-            <div className="bg-[#f6f3c9] z-10 mt-[151px] text-start border border-[#efe99b] p-[19px] w-full md:w-[343px] h-auto rounded-2xl">
-              <div className="tracking-[-0.020em] flex flex-row items-center text-[20px] font-semibold">
-                Phase&nbsp;
-                <h2 className="text-xl font-bold tracking-normal">#3</h2>
-              </div>
-              {config.roadmapPage.phases[2].items.map((text: string) => (
-                <div
-                  key={text + Math.random() * 100}
-                  className="flex flex-row mt-1 items-center text-center justify-start"
-                >
-                  <span className="size-2 bg-zinc-800 rounded-full" />
-                  &nbsp;
-                  <span className="font-medium tracking-tight text-[18px]">
-                    {text}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* Right side */}
-          <div className="right-0 flex flex-col">
-            {/* Phase 2 */}
-            <div className="bg-[#f6f3c9] mt-[155px] z-10 text-start border border-[#efe99b] p-[19px] w-full md:w-[343px] h-auto rounded-2xl">
-              <div className="tracking-[-0.020em] flex flex-row items-center text-[20px] font-semibold">
-                Phase&nbsp;
-                <h2 className="text-xl font-bold tracking-normal">#2</h2>
-              </div>
-              {config.roadmapPage.phases[1].items.map((text: string) => (
-                <div
-                  key={text + Math.random() * 100}
-                  className="flex flex-row mt-1 items-center text-center justify-start"
-                >
-                  <span className="size-2 bg-zinc-800 rounded-full" />
-                  &nbsp;
-                  <span className="font-medium tracking-tight text-[18px]">
-                    {text}
-                  </span>
-                </div>
-              ))}
-            </div>
-            {/* Phase 4 */}
-            <div className="bg-[#f6f3c9] mt-[155px] z-10 text-start border border-[#efe99b] p-[19px] w-full md:w-[343px] h-auto rounded-2xl">
-              <div className="tracking-[-0.020em] flex flex-row items-center text-[20px] font-semibold">
-                Phase&nbsp;
-                <h2 className="text-xl font-bold tracking-normal">#4</h2>
-              </div>
-              {config.roadmapPage.phases[3].items.map((text: string) => (
-                <div
-                  key={text + Math.random() * 100}
-                  className="flex flex-row mt-1 items-center text-center justify-start"
-                >
-                  <span className="size-2 bg-zinc-800 rounded-full" />
-                  &nbsp;
-                  <span className="font-medium tracking-tight text-[18px]">
-                    {text}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        </div>
+
+        {/* Call to Action */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          className="mt-16 text-center"
+        >
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            Join Our Journey
+          </h2>
+          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+            Be part of our growing community and help shape the future of $PENGU.
+            Together, we'll create something amazing!
+          </p>
+          <a
+            href={config.telegramLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 border-2 border-yellow-500 text-white bg-yellow-500 rounded-xl hover:bg-yellow-600 transition-colors shadow-lg hover:shadow-xl"
+          >
+            Join Our Community
+            <FaUsers className="ml-2" />
+          </a>
+        </motion.div>
       </div>
     </motion.div>
   );

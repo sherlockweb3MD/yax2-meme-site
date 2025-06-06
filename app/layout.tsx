@@ -1,19 +1,18 @@
 "use client";
-import React from "react";
-import { Grandstander } from "next/font/google";
-import Header from "@/components/header";
 import "./globals.css";
-import { motion } from "framer-motion";
+import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
+import config from "@/config";
+import { motion } from "framer-motion";
+import { FaTelegram, FaTwitter, FaInstagram } from "react-icons/fa";
 
-const grandstander = Grandstander({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
-// Root Layout
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <head>
@@ -62,26 +61,131 @@ export default function RootLayout({
         <meta name="theme-color" content="#fafaf2" />
         <title>$PENGU - Dive into the meme magic!</title>
       </head>
-      <body
-        className={
-          "dark:bg-background-dark max-w-[100vw] overflow-x-hidden bg-background-light text-background-dark dark:text-background-light " +
-          grandstander.className
-        }
-      >
-        <motion.div
-          initial={{ opacity: 0, x: -0 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <Toaster
-            toastOptions={{
-              className: "!z-[9999] !bg-[#fefce8] !border !border-[#fafaf2]",
-            }}
-            containerClassName="md:mt-14 mt-24"
-          />
-          <Header />
-          {children}
-        </motion.div>
+      <body className={inter.className}>
+        <Toaster position="top-center" />
+        
+        {/* Navigation Bar */}
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-yellow-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              <div className="flex items-center">
+                <a href="/" className="flex items-center space-x-2">
+                  <img src="https://pekky.xyz/pekky.svg" alt="Logo" className="h-8 w-8" />
+                  <span className="font-bold text-xl bg-gradient-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent">
+                    $PENGU
+                  </span>
+                </a>
+              </div>
+              
+              <div className="hidden md:flex items-center space-x-8">
+                <a href="/" className="text-gray-600 hover:text-yellow-500 transition-colors">
+                  Home
+                </a>
+                <a href="/tokenomics" className="text-gray-600 hover:text-yellow-500 transition-colors">
+                  Tokenomics
+                </a>
+                <a href="/roadmap" className="text-gray-600 hover:text-yellow-500 transition-colors">
+                  Roadmap
+                </a>
+                <div className="flex items-center space-x-4">
+                  <a
+                    href={config.telegramLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-[#0088cc] transition-colors"
+                  >
+                    <FaTelegram size={20} />
+                  </a>
+                  <a
+                    href={config.twitterLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-black transition-colors"
+                  >
+                    <FaTwitter size={20} />
+                  </a>
+                  <a
+                    href={config.instagramLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-pink-600 transition-colors"
+                  >
+                    <FaInstagram size={20} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        {/* Main Content */}
+        {children}
+
+        {/* Footer */}
+        <footer className="bg-gradient-to-b from-yellow-50 to-white border-t border-yellow-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">About $PENGU</h3>
+                <p className="text-gray-600">
+                  The most quacktastic memecoin on Solana. Join our community and be part of the next big thing in crypto!
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">Quick Links</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <a href="/" className="text-gray-600 hover:text-yellow-500 transition-colors">
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/tokenomics" className="text-gray-600 hover:text-yellow-500 transition-colors">
+                      Tokenomics
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/roadmap" className="text-gray-600 hover:text-yellow-500 transition-colors">
+                      Roadmap
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">Connect With Us</h3>
+                <div className="flex space-x-4">
+                  <a
+                    href={config.telegramLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-[#0088cc] transition-colors"
+                  >
+                    <FaTelegram size={24} />
+                  </a>
+                  <a
+                    href={config.twitterLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-black transition-colors"
+                  >
+                    <FaTwitter size={24} />
+                  </a>
+                  <a
+                    href={config.instagramLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-pink-600 transition-colors"
+                  >
+                    <FaInstagram size={24} />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="mt-8 pt-8 border-t border-yellow-100 text-center text-gray-600">
+              <p>© {new Date().getFullYear()} $PENGU. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );
