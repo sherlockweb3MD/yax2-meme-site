@@ -2,7 +2,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
-import config from "@/config";
+import { config } from "./config";
 import { motion } from "framer-motion";
 import { FaTelegram, FaTwitter, FaInstagram } from "react-icons/fa";
 
