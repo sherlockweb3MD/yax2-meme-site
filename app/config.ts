@@ -48,7 +48,9 @@ export const config = {
       },
     ],
   },
-  telegramLink: "https://t.me/your_telegram_group",
+  telegramLink: "https://t.me/pengu_sol",
+  twitterLink: "https://twitter.com/pengu_sol",
+  instagramLink: "https://instagram.com/pengu_sol",
 } as const;
 
 export type Config = typeof config; 
